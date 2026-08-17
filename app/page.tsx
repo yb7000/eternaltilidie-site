@@ -346,7 +346,7 @@ export default function Home() {
       >
         <Logo3D src="/models/eternal-logo-3d.obj" className="logo-3d" />
         <div className="founder-copy">
-          <h2 className="anton">FOUNDER STORY</h2>
+          <h2 className="anton">ORIGIN STORY</h2>
           <p>
             Eternal was founded by Reggie James and Luca Repola in NYC. Today it is spearheaded
             by Daouda Leonard and a team of technologists, A&amp;R&apos;s and artist managers in Los

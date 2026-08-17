@@ -321,12 +321,6 @@ a:hover {
   font-size: clamp(18px, 2.2vw, 23px);
   line-height: 1.6;
 }
-.third-place-copy .sub {
-  margin: 0;
-  font-size: clamp(16px, 1.9vw, 20px);
-  line-height: 1.7;
-  text-wrap: pretty;
-}
 .highlight {
   background: #fff;
   color: #000;

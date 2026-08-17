@@ -264,10 +264,6 @@ export default function Home() {
             <span className="highlight">Eternal</span> is that new 3rd place. For music,
             conversation, events and discovery.
           </p>
-          <p className="sub">
-            They seek safe havens in IRL and URL space where they can be real, expressive and
-            heard.
-          </p>
         </div>
       </section>
 

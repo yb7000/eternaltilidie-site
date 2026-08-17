@@ -39,8 +39,8 @@ export default function Home() {
           style={{ width: "clamp(280px,42vw,520px)", height: "auto" }}
         />
         <p className="hero-lede">
-          <em>Eternal</em> is a technology label building culture and products for the next
-          generation of storytelling.
+          <em>Eternal</em> is a technology label for artists to develop the next generation of
+          storytelling.
         </p>
         <Dots />
       </section>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eternaltilidie.com"),
   title: "ETERNAL",
   description:
-    "Eternal is a technology label building culture and products for the next generation of storytelling.",
+    "Eternal is a technology label for artists to develop the next generation of storytelling.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ETERNAL",
     description:
-      "A technology label building culture and products for the next generation of storytelling.",
+      "A technology label for artists to develop the next generation of storytelling.",
     type: "website",
     url: "https://eternaltilidie.com",
     images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ETERNAL",
     description:
-      "A technology label building culture and products for the next generation of storytelling.",
+      "A technology label for artists to develop the next generation of storytelling.",
     images: ["https://eternaltilidie.com/og.png"],
   },
 };

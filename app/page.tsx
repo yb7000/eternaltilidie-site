@@ -348,9 +348,9 @@ export default function Home() {
         <div className="founder-copy">
           <h2 className="anton">ORIGIN STORY</h2>
           <p>
-            Eternal was founded by Reggie James and Luca Repola in NYC. Today it is spearheaded
-            by Daouda Leonard and a team of technologists, A&amp;R&apos;s and artist managers in Los
-            Angeles with continued inspiration from Reggie and Luca.
+            Eternal was founded in 2019 by Reggie James and Luca Repola in NYC. Today it is
+            spearheaded by Daouda Leonard and a team of technologists, A&amp;R&apos;s, and artist
+            managers in Los Angeles.
           </p>
         </div>
       </section>

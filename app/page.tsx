@@ -99,7 +99,7 @@ export default function Home() {
             target="_blank"
             rel="noopener"
           >
-            Studio
+            StudioOS
           </a>{" "}
           portal is how you can connect, engage and collaborate with the Eternal team.
         </p>

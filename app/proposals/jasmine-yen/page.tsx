@@ -5,9 +5,8 @@ import "./proposal.css";
 
 import graffitiLogo from "@/public/images/graffiti-logo.png";
 import doodleStar from "@/public/images/doodle-star.png";
-import doodleHeart from "@/public/images/doodle-heart.png";
 import mascot from "@/public/images/mascot.png";
-import crowdHearts from "@/public/images/crowd-hearts.jpg";
+import sweatCover from "@/public/images/jasmine-yen-sweat.png";
 import kidSkiMask from "@/public/images/kid-ski-mask.jpg";
 import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
@@ -151,35 +150,22 @@ export default function JasmineYenProposal() {
   return (
     <Deck>
       {/* 01 — Cover */}
-      <section className="slide slide--cover pslide pslide--center">
-        <Image
-          src={crowdHearts}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="bg-img"
-          style={{ objectPosition: "center bottom", opacity: 0.35 }}
-        />
-        <div
-          className="overlay"
-          style={{ background: "linear-gradient(rgba(17,17,17,.8),rgba(17,17,17,.45) 50%,rgba(17,17,17,.9))" }}
-        />
-        <Image
-          src={doodleHeart}
-          alt=""
-          className="floaty"
-          style={{ left: "8%", top: "16%", width: "clamp(44px,6vw,80px)", height: "auto", animationDuration: "8s" }}
-        />
-        <Image
-          src={doodleStar}
-          alt=""
-          className="floaty"
-          style={{ right: "10%", bottom: "20%", width: "clamp(40px,5vw,70px)", height: "auto", animationDuration: "9s" }}
-        />
-        <h1 className="anton p-title p-title--xl">Jasmine Yen</h1>
-        <p className="p-sub">Service &amp; Partnership Proposal</p>
-        <Dots />
+      <section className="slide p-cover">
+        <div className="p-cover-text">
+          <h1 className="anton p-title p-title--xl">Jasmine Yen</h1>
+          <p className="p-sub">Service &amp; Partnership Proposal</p>
+          <Dots />
+        </div>
+        <div className="p-cover-art">
+          <Image
+            src={sweatCover}
+            alt="Jasmine Yen — SWEAT cover art"
+            fill
+            priority
+            sizes="(max-width: 820px) 100vw, 60vw"
+            style={{ objectFit: "contain", objectPosition: "center" }}
+          />
+        </div>
       </section>
 
       {/* 02 — Our mission */}

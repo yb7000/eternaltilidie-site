@@ -7,7 +7,6 @@ import graffitiLogo from "@/public/images/graffiti-logo.png";
 import doodleStar from "@/public/images/doodle-star.png";
 import mascot from "@/public/images/mascot.png";
 import sweatCover from "@/public/images/jasmine-yen-sweat.jpeg";
-import kidSkiMask from "@/public/images/kid-ski-mask.jpg";
 import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
 
@@ -42,6 +41,8 @@ const PALETTE = [C.pink, C.red, C.yellow, C.green, C.blue, C.cyan];
 
 // Costs + deal-terms slides are kept in the source but not rendered.
 const SHOW_COMMERCIALS = false;
+// Production and agency team slides are kept in the source but not rendered.
+const SHOW_TEAM = false;
 
 function Dots({ small = false }: { small?: boolean }) {
   return (
@@ -175,20 +176,19 @@ export default function JasmineYenProposal() {
           <h2 className="anton p-title p-title--sm">Overview</h2>
           <p className="p-body">
             <span className="highlight">WE INTEND</span> to address the specific needs of Jasmine Yen by
-            pulling from our dynamic knowledge base, network of industry partners, and production
-            management platform to provide Jasmine and the team with the insights, tools and people
-            needed to birth a new artist&apos;s career.
+            pulling from our dynamic knowledge base, network of industry partners, and business
+            intelligence platform to provide Jasmine and the team with the insights, tools and people
+            needed to grow her artist career.
           </p>
           <p className="p-body">
             <span className="highlight">WE WILL</span> work closely with Jasmine to assist in completing
-            the production of the album while simultaneously supporting the development of the Jasmine
-            Yen brand and managing the marketing of the distribution of the first music promotional
-            campaign.
+            the production of an EP and an album while simultaneously supporting the development of
+            the Jasmine Yen brand and managing the marketing of the promotional and touring campaigns.
           </p>
           <p className="p-body">
-            <span className="highlight">OUR OBJECTIVE</span> is to help Jasmine start and grow a career
-            as a recording and performing artist — using a modern hit-making approach to produce a
-            record that stands out in the current new artist landscape.
+            <span className="highlight">OUR OBJECTIVE</span> is to help Jasmine build a career as a
+            recording and performing artist — using a modern hit-making approach to produce a record
+            that stands out in the current new artist landscape.
           </p>
         </div>
       </section>
@@ -215,29 +215,17 @@ export default function JasmineYenProposal() {
       </section>
 
       {/* 04 — Our goals */}
-      <section className="slide slide--cover pslide">
-        <Image
-          src={kidSkiMask}
-          alt=""
-          fill
-          sizes="100vw"
-          className="bg-img"
-          style={{ objectPosition: "center 30%", opacity: 0.35 }}
-        />
-        <div
-          className="overlay"
-          style={{ background: "linear-gradient(90deg,rgba(17,17,17,.92),rgba(17,17,17,.55))" }}
-        />
+      <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.blue}>Our goals</Kicker>
           <List
             big
             colorize
             items={[
-              "Develop an artist journey that has clear and achievable objectives.",
-              "Create and curate the artist's image through content creation.",
-              "Form a dedicated team to work alongside the artist.",
-              "Grow with the artist to the heights of their own aspirations.",
+              "Develop your artist journey that has clear and achievable objectives.",
+              "Create and curate your image through focused creative direction and brand development strategies.",
+              "Form a dedicated team to work alongside you.",
+              "Grow with you to the heights of your own aspirations.",
             ]}
           />
         </div>
@@ -290,9 +278,9 @@ export default function JasmineYenProposal() {
           <Kicker color={C.pink}>Our services</Kicker>
           <h2 className="anton p-title p-title--sm">Development</h2>
           <p className="p-body p-body--sm" style={{ maxWidth: 900 }}>
-            We enhance our artists&apos; creation process by providing on-demand production services
-            with an emphasis on content creation, production management, and terms of exchange
-            communications. Specific services include:
+            We enhance your creation process by providing production services with an emphasis on
+            content creation, production management, and managing creative relationships. Specific
+            services include:
           </p>
           <List
             cols
@@ -347,7 +335,7 @@ export default function JasmineYenProposal() {
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.cyan}>Our services</Kicker>
-          <h2 className="anton p-title p-title--sm">Administration</h2>
+          <h2 className="anton p-title p-title--sm">Management &amp; Administration</h2>
           <p className="p-body p-body--sm" style={{ maxWidth: 900 }}>
             StudioOS will give Jasmine and the team access to the information and assets they need
             at any time, from anywhere. In addition to this custom dashboard, we also handle the
@@ -464,53 +452,58 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 11 — Production team */}
-      <section className="slide pslide pslide--center">
-        <Kicker color={C.green}>Our production team</Kicker>
-        <div className="p-team">
-          <TeamGroup
-            label="Lead"
-            members={[
-              { name: "Daouda Leonard", role: "Production Manager" },
-              { name: "Jon Tanners", role: "Creative Director" },
-            ]}
-          />
-          <TeamGroup
-            label="Support"
-            offset={2}
-            members={[
-              { name: "Dannie Fite", role: "A&R" },
-              { name: "Langa Kambi-Shamba", role: "Project Manager" },
-              { name: "Sarah Kahn", role: "Production Assistant" },
-            ]}
-          />
-        </div>
-      </section>
+      {/* Production + agency team — hidden for now; flip SHOW_TEAM to bring them back */}
+      {SHOW_TEAM && (
+        <>
+        {/* Production team (hidden) */}
+        <section className="slide pslide pslide--center">
+          <Kicker color={C.green}>Our production team</Kicker>
+          <div className="p-team">
+            <TeamGroup
+              label="Lead"
+              members={[
+                { name: "Daouda Leonard", role: "Production Manager" },
+                { name: "Jon Tanners", role: "Creative Director" },
+              ]}
+            />
+            <TeamGroup
+              label="Support"
+              offset={2}
+              members={[
+                { name: "Dannie Fite", role: "A&R" },
+                { name: "Langa Kambi-Shamba", role: "Project Manager" },
+                { name: "Sarah Kahn", role: "Production Assistant" },
+              ]}
+            />
+          </div>
+        </section>
 
-      {/* 12 — Agency team */}
-      <section className="slide pslide pslide--center">
-        <Kicker color={C.blue}>Our agency team</Kicker>
-        <div className="p-team">
-          <TeamGroup
-            label="Lead"
-            members={[
-              { name: "Erica Castello", role: "Primal Branding Specialist" },
-              { name: "Stu Iverson", role: "Strategy Specialist" },
-              { name: "Lucia Margarita", role: "Communications Manager" },
-            ]}
-          />
-          <TeamGroup
-            label="Support"
-            offset={3}
-            members={[
-              { name: "Yung Jake", role: "Creative Advisor" },
-              { name: "Billy Walsh", role: "Marketing Advisor" },
-            ]}
-          />
-        </div>
-      </section>
+        {/* Agency team (hidden) */}
+        <section className="slide pslide pslide--center">
+          <Kicker color={C.blue}>Our agency team</Kicker>
+          <div className="p-team">
+            <TeamGroup
+              label="Lead"
+              members={[
+                { name: "Erica Castello", role: "Primal Branding Specialist" },
+                { name: "Stu Iverson", role: "Strategy Specialist" },
+                { name: "Lucia Margarita", role: "Communications Manager" },
+              ]}
+            />
+            <TeamGroup
+              label="Support"
+              offset={3}
+              members={[
+                { name: "Yung Jake", role: "Creative Advisor" },
+                { name: "Billy Walsh", role: "Marketing Advisor" },
+              ]}
+            />
+          </div>
+        </section>
+        </>
+      )}
 
-      {/* 13 — Business model */}
+      {/* 11 — Business model */}
       <section className="slide slide--cover pslide">
         <Image
           src={boxHeadsForest}
@@ -638,7 +631,7 @@ export default function JasmineYenProposal() {
         </>
       )}
 
-      {/* 14 — Closing */}
+      {/* 12 — Closing */}
       <section className="slide slide--center pslide--center" style={{ gap: 28 }}>
         <Image
           src={avatarsTogether}

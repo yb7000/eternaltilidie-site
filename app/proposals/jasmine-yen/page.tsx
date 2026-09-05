@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     description: "Service & partnership proposal.",
     type: "website",
     url: "https://eternaltilidie.com/proposals/jasmine-yen",
-    images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-jasmine-yen.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jasmine Yen × Eternal",
     description: "Service & partnership proposal.",
-    images: ["https://eternaltilidie.com/og.png"],
+    images: ["https://eternaltilidie.com/og-jasmine-yen.jpg"],
   },
 };
 

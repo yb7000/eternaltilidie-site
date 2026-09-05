@@ -6,14 +6,17 @@ import graffitiLogo from "@/public/images/graffiti-logo.png";
 
 // Full-viewport slide deck: scroll-snap sections, keyboard navigation,
 // an animated pager, and a film-grain overlay.
-// `innerLabel`, when given, replaces the site link in the header on every
-// slide except the first and last (used by proposal decks to show the artist).
+// `innerLabel`, when given, is shown in the header on every slide except the
+// first and last (used by proposal decks to show the artist). `siteLink`
+// controls whether the eternaltilidie.com link appears on the remaining slides.
 export default function Deck({
   children,
   innerLabel,
+  siteLink = true,
 }: {
   children: React.ReactNode;
   innerLabel?: string;
+  siteLink?: boolean;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<number | null>(null);
@@ -130,7 +133,7 @@ export default function Deck({
         </div>
         {innerLabel && idx > 0 && idx < count - 1 ? (
           <span className="site-link header-label">{innerLabel}</span>
-        ) : (
+        ) : siteLink ? (
           <a
             className="site-link"
             href="https://eternaltilidie.com"
@@ -139,7 +142,7 @@ export default function Deck({
           >
             eternaltilidie.com
           </a>
-        )}
+        ) : null}
       </header>
 
       <div className="deck-pager">

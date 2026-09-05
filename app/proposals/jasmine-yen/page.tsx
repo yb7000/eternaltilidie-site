@@ -6,7 +6,7 @@ import "./proposal.css";
 import graffitiLogo from "@/public/images/graffiti-logo.png";
 import doodleStar from "@/public/images/doodle-star.png";
 import mascot from "@/public/images/mascot.png";
-import sweatCover from "@/public/images/jasmine-yen-sweat.png";
+import sweatCover from "@/public/images/jasmine-yen-sweat.jpeg";
 import kidSkiMask from "@/public/images/kid-ski-mask.jpg";
 import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
@@ -151,20 +151,20 @@ export default function JasmineYenProposal() {
     <Deck>
       {/* 01 — Cover */}
       <section className="slide p-cover">
+        <Image
+          src={sweatCover}
+          alt="Jasmine Yen — SWEAT cover art"
+          fill
+          priority
+          sizes="100vw"
+          className="bg-img"
+          style={{ objectPosition: "center 12%" }}
+        />
+        <div className="overlay p-cover-shade" />
         <div className="p-cover-text">
           <h1 className="anton p-title p-title--xl">Jasmine Yen</h1>
           <p className="p-sub">Service &amp; Partnership Proposal</p>
           <Dots />
-        </div>
-        <div className="p-cover-art">
-          <Image
-            src={sweatCover}
-            alt="Jasmine Yen — SWEAT cover art"
-            fill
-            priority
-            sizes="(max-width: 820px) 100vw, 60vw"
-            style={{ objectFit: "contain", objectPosition: "center" }}
-          />
         </div>
       </section>
 

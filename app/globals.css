@@ -65,6 +65,10 @@ a:hover {
   font-weight: 700;
   text-underline-offset: 3px;
 }
+.deck-header .header-label {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
 .deck-pager {
   position: absolute;

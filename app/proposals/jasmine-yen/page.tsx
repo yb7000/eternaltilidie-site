@@ -178,7 +178,7 @@ export default function JasmineYenProposal() {
             <span className="highlight">WE INTEND</span> to address the specific needs of Jasmine Yen by
             pulling from our dynamic knowledge base, network of industry partners, and business
             intelligence platform to provide Jasmine and the team with the insights, tools and people
-            needed to grow her artist career.
+            needed to grow your artist career.
           </p>
           <p className="p-body">
             <span className="highlight">WE WILL</span> work closely with Jasmine to assist in completing

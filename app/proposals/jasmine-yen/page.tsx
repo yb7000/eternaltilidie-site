@@ -149,7 +149,7 @@ function TeamGroup({ label, members, offset = 0 }: { label: string; members: Mem
 
 export default function JasmineYenProposal() {
   return (
-    <Deck innerLabel="Jasmine Yen">
+    <Deck innerLabel="Jasmine Yen" siteLink={false}>
       {/* 01 — Cover */}
       <section className="slide p-cover">
         <Image
@@ -169,7 +169,48 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 02 — Our mission */}
+      {/* 02 — Our product */}
+      <section className="slide pslide">
+        <Image
+          src={doodleStar}
+          alt=""
+          className="floaty"
+          style={{ right: "12%", top: "18%", width: "clamp(44px,6vw,80px)", height: "auto", opacity: 0.85, animationDuration: "7s" }}
+        />
+        <Image
+          src={doodleStar}
+          alt=""
+          className="floaty"
+          style={{ right: "6%", bottom: "26%", width: "clamp(34px,4vw,56px)", height: "auto", opacity: 0.7, scale: "-1 1", animationDuration: "9s" }}
+        />
+        <div className="p-inner p-split">
+          <div className="p-col">
+            <Kicker color={C.cyan}>Our product</Kicker>
+            <h2 className="anton p-title p-title--sm">Studio OS</h2>
+            <p className="p-body">
+              Jasmine and the team will be able to manage all aspects of the production,
+              administration, and marketing processes through{" "}
+              <a className="p-link" href="https://eternal.createos.app" target="_blank" rel="noopener">
+                StudioOS
+              </a>
+              , our personalized artist portal.
+            </p>
+            <p className="p-body p-body--sm" style={{ opacity: 0.8 }}>
+              To view the portal:{" "}
+              <a className="p-link" href="https://eternal.createos.app" target="_blank" rel="noopener">
+                eternal.createos.app
+              </a>
+            </p>
+          </div>
+          <Image
+            src={mascot}
+            alt="Eternal mascot doodle"
+            style={{ flex: "0 0 auto", width: "clamp(160px,20vw,260px)", height: "auto" }}
+          />
+        </div>
+      </section>
+
+      {/* 03 — Our mission */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.yellow}>Our mission</Kicker>
@@ -193,7 +234,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 03 — Our values */}
+      {/* 04 — Our values */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.green}>Our values</Kicker>
@@ -214,7 +255,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 04 — Our goals */}
+      {/* 05 — Our goals */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.blue}>Our goals</Kicker>
@@ -227,47 +268,6 @@ export default function JasmineYenProposal() {
               "Form a dedicated team to work alongside you.",
               "Grow with you to the heights of your own aspirations.",
             ]}
-          />
-        </div>
-      </section>
-
-      {/* 05 — Our product */}
-      <section className="slide pslide">
-        <Image
-          src={doodleStar}
-          alt=""
-          className="floaty"
-          style={{ right: "12%", top: "18%", width: "clamp(44px,6vw,80px)", height: "auto", opacity: 0.85, animationDuration: "7s" }}
-        />
-        <Image
-          src={doodleStar}
-          alt=""
-          className="floaty"
-          style={{ right: "6%", bottom: "26%", width: "clamp(34px,4vw,56px)", height: "auto", opacity: 0.7, scale: "-1 1", animationDuration: "9s" }}
-        />
-        <div className="p-inner p-split">
-          <div className="p-col">
-            <Kicker color={C.cyan}>Our product</Kicker>
-            <h2 className="anton p-title p-title--sm">StudioOS</h2>
-            <p className="p-body">
-              Jasmine and the team will be able to manage all aspects of the production,
-              administration, and marketing processes through{" "}
-              <a className="p-link" href="https://eternal.createos.app" target="_blank" rel="noopener">
-                StudioOS
-              </a>
-              , our personalized artist portal.
-            </p>
-            <p className="p-body p-body--sm" style={{ opacity: 0.8 }}>
-              To view the portal:{" "}
-              <a className="p-link" href="https://eternal.createos.app" target="_blank" rel="noopener">
-                eternal.createos.app
-              </a>
-            </p>
-          </div>
-          <Image
-            src={mascot}
-            alt="Eternal mascot doodle"
-            style={{ flex: "0 0 auto", width: "clamp(160px,20vw,260px)", height: "auto" }}
           />
         </div>
       </section>
@@ -370,7 +370,7 @@ export default function JasmineYenProposal() {
                   "Brainstorm next steps, collaboration ideas",
                   "Develop work plan to complete album",
                 ],
-                deliverables: ["Strategy Guide", "Production Work Plan", "StudioOS Access"],
+                deliverables: ["Strategy Guide", "Production Work Plan"],
               },
               {
                 name: "Development & Planning",
@@ -392,7 +392,7 @@ export default function JasmineYenProposal() {
                   "Sourcing of production assistance",
                   "Sessions",
                 ],
-                deliverables: ["Completed Album", "Delivery of masters to Jasmine"],
+                deliverables: ["Completed EP/Album", "Delivery of masters to Jasmine"],
               },
             ]}
           />
@@ -545,7 +545,7 @@ export default function JasmineYenProposal() {
                 creative career. This phase in the Eternal model is structured on the premise of
                 shared risk and shared upside. We will work together during year two to develop an
                 operating budget and fees based on contract length. This will translate to a cash and
-                net profits commission model, where both parties will be able to rapidly iterate on a
+                commission model, where both parties will be able to rapidly iterate on a
                 variety of pathways that lead to the highest level of growth.
               </p>
             </div>
@@ -556,9 +556,10 @@ export default function JasmineYenProposal() {
               <p>
                 Year 3 is all about understanding, utilizing, testing, and sustaining our co-created
                 IP, products including music, merchandise and visual media. Once we have shared
-                reality about what was accomplished in year two, Eternal and Jasmine will negotiate a
-                sustainable equity exchange in the development of formal long-term partnership to
-                develop an ancillary entertainment business.
+                reality about what was accomplished in year two, Eternal and Jasmine will work together to
+                negotiate a sustainable equity exchange in the development of a formal long-term
+                partnership to develop ancillary entertainment business ventures that complement her
+                brand.
               </p>
             </div>
           </div>

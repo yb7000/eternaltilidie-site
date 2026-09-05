@@ -7,7 +7,6 @@ import graffitiLogo from "@/public/images/graffiti-logo.png";
 import doodleStar from "@/public/images/doodle-star.png";
 import doodleHeart from "@/public/images/doodle-heart.png";
 import mascot from "@/public/images/mascot.png";
-import crowdEvent from "@/public/images/crowd-event.jpg";
 import crowdHearts from "@/public/images/crowd-hearts.jpg";
 import kidSkiMask from "@/public/images/kid-ski-mask.jpg";
 import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
@@ -41,6 +40,9 @@ const C = {
   cyan: "#2ec4e6",
 };
 const PALETTE = [C.pink, C.red, C.yellow, C.green, C.blue, C.cyan];
+
+// Costs + deal-terms slides are kept in the source but not rendered.
+const SHOW_COMMERCIALS = false;
 
 function Dots({ small = false }: { small?: boolean }) {
   return (
@@ -144,20 +146,6 @@ function TeamGroup({ label, members, offset = 0 }: { label: string; members: Mem
   );
 }
 
-const WINS = [
-  "Taki Taki",
-  "Sorry",
-  "#BlackGirlMagic",
-  "Mo Bamba",
-  "Lean On",
-  "Let Me Love You",
-  "Talk",
-  "Turn Down For What",
-  "The Pancake Epidemic",
-  "Fact0ry",
-  "Juice",
-  "Alekesam",
-];
 
 export default function JasmineYenProposal() {
   return (
@@ -189,58 +177,12 @@ export default function JasmineYenProposal() {
           className="floaty"
           style={{ right: "10%", bottom: "20%", width: "clamp(40px,5vw,70px)", height: "auto", animationDuration: "9s" }}
         />
-        <Image
-          src={graffitiLogo}
-          alt="Eternal"
-          priority
-          style={{ width: "clamp(160px,20vw,240px)", height: "auto" }}
-        />
         <h1 className="anton p-title p-title--xl">Jasmine Yen</h1>
         <p className="p-sub">Service &amp; Partnership Proposal</p>
         <Dots />
       </section>
 
-      {/* 02 — Who we are */}
-      <section className="slide slide--cover pslide pslide--center">
-        <Image
-          src={crowdEvent}
-          alt=""
-          fill
-          sizes="100vw"
-          className="bg-img"
-          style={{ opacity: 0.5 }}
-        />
-        <div
-          className="overlay"
-          style={{ background: "radial-gradient(ellipse at center,rgba(0,0,0,.55),rgba(0,0,0,.88))" }}
-        />
-        <Kicker color={C.pink}>Who we are</Kicker>
-        <p className="anton p-body p-body--lg">
-          <span className="highlight">Eternal</span> is a team of artists, consultants, and industry
-          experts working together to design, manage, and grow creative enterprises. We specialize in
-          developing the people, processes, and products that generate global cultural impact.
-        </p>
-      </section>
-
-      {/* 03 — What we do */}
-      <section className="slide pslide">
-        <div className="p-inner">
-          <Kicker color={C.red}>What we do</Kicker>
-          <p className="p-body" style={{ maxWidth: 900 }}>
-            We are philosophers, engineers, architects, designers, producers, hackers, copywriters, and
-            creative directors committed to excellence. Here are a few of our wins:
-          </p>
-          <ul className="p-wins">
-            {WINS.map((w, i) => (
-              <li key={w} style={{ color: PALETTE[i % PALETTE.length] }}>
-                {w}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 04 — Our mission */}
+      {/* 02 — Our mission */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.yellow}>Our mission</Kicker>
@@ -265,7 +207,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 05 — Our values */}
+      {/* 03 — Our values */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.green}>Our values</Kicker>
@@ -286,7 +228,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 06 — Our goals */}
+      {/* 04 — Our goals */}
       <section className="slide slide--cover pslide">
         <Image
           src={kidSkiMask}
@@ -315,7 +257,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 07 — Our product */}
+      {/* 05 — Our product */}
       <section className="slide pslide">
         <Image
           src={doodleStar}
@@ -356,7 +298,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 08 — Services: Development */}
+      {/* 06 — Services: Development */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.pink}>Our services</Kicker>
@@ -386,7 +328,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 09 — Services: Marketing */}
+      {/* 07 — Services: Marketing */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.yellow}>Our services</Kicker>
@@ -415,7 +357,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 10 — Services: Administration */}
+      {/* 08 — Services: Administration */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.cyan}>Our services</Kicker>
@@ -438,7 +380,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 11 — Year 1: Development */}
+      {/* 09 — Year 1: Development */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.pink}>Year 1: Development</Kicker>
@@ -488,7 +430,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 12 — Year 1: Marketing */}
+      {/* 10 — Year 1: Marketing */}
       <section className="slide pslide">
         <div className="p-inner">
           <Kicker color={C.yellow}>Year 1: Marketing</Kicker>
@@ -536,7 +478,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 13 — Production team */}
+      {/* 11 — Production team */}
       <section className="slide pslide pslide--center">
         <Kicker color={C.green}>Our production team</Kicker>
         <div className="p-team">
@@ -559,7 +501,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 14 — Agency team */}
+      {/* 12 — Agency team */}
       <section className="slide pslide pslide--center">
         <Kicker color={C.blue}>Our agency team</Kicker>
         <div className="p-team">
@@ -582,7 +524,7 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 15 — Business model */}
+      {/* 13 — Business model */}
       <section className="slide slide--cover pslide">
         <Image
           src={boxHeadsForest}
@@ -644,68 +586,73 @@ export default function JasmineYenProposal() {
         </div>
       </section>
 
-      {/* 16 — Costs */}
-      <section className="slide pslide">
-        <div className="p-inner" style={{ maxWidth: 920 }}>
-          <Kicker color={C.yellow}>Costs</Kicker>
-          <table className="p-costs">
-            <thead>
-              <tr>
-                <th scope="col">Year 1 activities</th>
-                <th scope="col">Cost</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="c-dev">Development</td>
-                <td>$165,000</td>
-              </tr>
-              <tr>
-                <td className="c-mkt">Marketing</td>
-                <td>$90,000</td>
-              </tr>
-              <tr>
-                <td className="c-adm">Administration</td>
-                <td>$45,000</td>
-              </tr>
-              <tr className="total">
-                <td>Total cost</td>
-                <td>
-                  <span className="highlight">$300,000</span>
-                </td>
-              </tr>
-              <tr className="terms">
-                <td>Payment terms</td>
-                <td>$25,000 paid monthly</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* 17 — The deal */}
-      <section className="slide pslide">
-        <div className="p-inner p-split">
-          <div className="p-col">
-            <Kicker color={C.green}>Our deal</Kicker>
-            <h2 className="anton p-title p-title--sm">The terms</h2>
-            <List
-              colorize
-              items={[
-                "$25K per month, 12 months with a 3 month initial discovery and preparation period.",
-                "If Jasmine Yen decides to move on without Eternal after the initial period, a $25K success fee will be paid upon termination of agreement.",
-                "All asset development and promotion activities will incur additional costs TBD based on scope of creative and labor costs.",
-              ]}
-            />
+      {/* Costs + The deal — hidden for now; flip SHOW_COMMERCIALS to bring them back */}
+      {SHOW_COMMERCIALS && (
+        <>
+        {/* Costs (hidden) */}
+        <section className="slide pslide">
+          <div className="p-inner" style={{ maxWidth: 920 }}>
+            <Kicker color={C.yellow}>Costs</Kicker>
+            <table className="p-costs">
+              <thead>
+                <tr>
+                  <th scope="col">Year 1 activities</th>
+                  <th scope="col">Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="c-dev">Development</td>
+                  <td>$165,000</td>
+                </tr>
+                <tr>
+                  <td className="c-mkt">Marketing</td>
+                  <td>$90,000</td>
+                </tr>
+                <tr>
+                  <td className="c-adm">Administration</td>
+                  <td>$45,000</td>
+                </tr>
+                <tr className="total">
+                  <td>Total cost</td>
+                  <td>
+                    <span className="highlight">$300,000</span>
+                  </td>
+                </tr>
+                <tr className="terms">
+                  <td>Payment terms</td>
+                  <td>$25,000 paid monthly</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <p className="anton p-stat" style={{ flex: "0 1 auto" }}>
-            $25K
-            <small>per month · 12 months</small>
-          </p>
-        </div>
-      </section>
+        </section>
 
-      {/* 18 — Closing */}
+        {/* The deal (hidden) */}
+        <section className="slide pslide">
+          <div className="p-inner p-split">
+            <div className="p-col">
+              <Kicker color={C.green}>Our deal</Kicker>
+              <h2 className="anton p-title p-title--sm">The terms</h2>
+              <List
+                colorize
+                items={[
+                  "$25K per month, 12 months with a 3 month initial discovery and preparation period.",
+                  "If Jasmine Yen decides to move on without Eternal after the initial period, a $25K success fee will be paid upon termination of agreement.",
+                  "All asset development and promotion activities will incur additional costs TBD based on scope of creative and labor costs.",
+                ]}
+              />
+            </div>
+            <p className="anton p-stat" style={{ flex: "0 1 auto" }}>
+              $25K
+              <small>per month · 12 months</small>
+            </p>
+          </div>
+        </section>
+        </>
+      )}
+
+      {/* 14 — Closing */}
       <section className="slide slide--center pslide--center" style={{ gap: 28 }}>
         <Image
           src={avatarsTogether}

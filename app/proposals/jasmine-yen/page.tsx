@@ -149,7 +149,7 @@ function TeamGroup({ label, members, offset = 0 }: { label: string; members: Mem
 
 export default function JasmineYenProposal() {
   return (
-    <Deck>
+    <Deck innerLabel="Jasmine Yen">
       {/* 01 — Cover */}
       <section className="slide p-cover">
         <Image

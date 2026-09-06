@@ -541,8 +541,8 @@ export default function JasmineYenProposal() {
               </h3>
               <p>
                 If both parties consent to continued collaboration at the end of year one, Eternal
-                will source and manage the talent needed to continue to accelerate Jasmine&apos;s
-                creative career. This phase in the Eternal model is structured on the premise of
+                will source, secure and manage the partnerships and talent needed to continue to
+                accelerate Jasmine&apos;s creative career. This phase in the Eternal model is structured on the premise of
                 shared risk and shared upside. We will work together during year two to develop an
                 operating budget and fees based on contract length. This will translate to a cash and
                 commission model, where both parties will be able to rapidly iterate on a
@@ -555,7 +555,7 @@ export default function JasmineYenProposal() {
               </h3>
               <p>
                 Year 3 is all about understanding, utilizing, testing, and sustaining our co-created
-                IP, products including music, merchandise and visual media. Once we have shared
+                IP, including music, merchandise, products and visual media. Once we have shared
                 reality about what was accomplished in year two, Eternal and Jasmine will work together to
                 negotiate a sustainable equity exchange in the development of a formal long-term
                 partnership to develop ancillary entertainment business ventures that complement her

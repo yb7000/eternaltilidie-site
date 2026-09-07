@@ -147,19 +147,6 @@ function Chips({ items, hot = [], color = C.yellow }: { items: string[]; hot?: s
   );
 }
 
-type Track = { name: string; with?: string; kind: "Original" | "Sample"; status: string; tag?: string };
-
-const PRIORITY_TRACKS: Track[] = [
-  { name: "Hold My Breath", with: "how2fly", kind: "Original", status: "Complete", tag: "Sept 30" },
-  { name: "Go With The Flow", with: "Gusta", kind: "Original", status: "Complete", tag: "Release" },
-  { name: "Crazy", with: "Groovebaby", kind: "Original", status: "Complete", tag: "Release" },
-  { name: "Do You Love Me", with: "HEADHIGH", kind: "Original", status: "Complete", tag: "Release" },
-  { name: "Like I Love You v3", with: "CIEII", kind: "Original", status: "Complete", tag: "Release" },
-  { name: "Somewhere In Heaven", kind: "Sample", status: "Complete", tag: "Release" },
-  { name: "Where You Are", kind: "Original", status: "Demo · needs vocal", tag: "Release" },
-  { name: "Off With Your Head (Edit)", kind: "Original", status: "Complete", tag: "SoundCloud" },
-];
-
 export default function OceanArtistReview() {
   return (
     <Deck innerLabel="Ocean" siteLink={false}>
@@ -210,7 +197,7 @@ export default function OceanArtistReview() {
             </p>
             <p className="ar-body">
               Before the records, there was the channel. Ocean built an audience of over 500K
-              YouTube subscribers as a content creator, plus 20K owned fans on email and SMS. A
+              YouTube subscribers as a content creator, plus 20K owned fans on D2C channels. A
               strong business can be built around him.
             </p>
             <p className="ar-body ar-body--sm" style={{ opacity: 0.8 }}>
@@ -251,7 +238,7 @@ export default function OceanArtistReview() {
             labels are interested in singles and EP deals.
           </p>
           <p className="ar-sub" style={{ color: C.cyan }}>
-            North Star: the Tiësto / Skepta of the dance world
+            North Star: Tiësto meets Skepta
           </p>
         </div>
       </section>
@@ -266,10 +253,9 @@ export default function OceanArtistReview() {
             <Stat num="181K" label="TikTok followers" color={C.cyan} />
             <Stat num="127K" label="Spotify monthly listeners" delta="7.6× since March" color={C.green} />
             <Stat num="63K" label="Instagram followers" color={C.pink} />
-            <Stat num="20K" label="Owned fans (email + SMS)" color={C.yellow} />
+            <Stat num="20K" label="Owned fans" color={C.yellow} />
             <Stat num="11.5K" label="SoundCloud followers" color={C.blue} />
             <Stat num="5.2K" label="Spotify followers" delta="+66% since March" color={C.green} />
-            <Stat num="#2,217" label="Viberate rank · UK" delta="#37,959 worldwide" color={C.cyan} />
           </ul>
           <p className="ar-note">
             Platform figures via Viberate, September 6, 2026. Owned-fan count from the artist.
@@ -323,64 +309,12 @@ export default function OceanArtistReview() {
                 The current distributor does not give dance music the editorial support it needs.
                 Time to move to a proper dance and electronic distributor.
               </>,
-              <>
-                There are 31 records in the pipeline, 21 of them complete. Most of them nobody has
-                heard yet.
-              </>,
             ]}
           />
         </div>
       </section>
 
-      {/* 07 — The catalog */}
-      <section className="slide ar-slide">
-        <div className="ar-inner">
-          <Kicker color={C.blue}>The catalog</Kicker>
-          <div className="ar-cols ar-cols--2" style={{ alignItems: "end" }}>
-            <h2 className="anton ar-title ar-title--sm">Unreleased records</h2>
-            <ul className="ar-stats ar-stats--3">
-              <Stat num="31" label="In the pipeline" color={C.blue} />
-              <Stat num="21" label="Complete" color={C.green} />
-              <Stat num="15" label="Collaborations" color={C.pink} />
-            </ul>
-          </div>
-          <table className="ar-catalog">
-            <thead>
-              <tr>
-                <th scope="col">Track</th>
-                <th scope="col">With</th>
-                <th scope="col">Type</th>
-                <th scope="col">Status</th>
-                <th scope="col">Plan</th>
-              </tr>
-            </thead>
-            <tbody>
-              {PRIORITY_TRACKS.map((t, i) => (
-                <tr key={t.name}>
-                  <td className="track">{t.name}</td>
-                  <td className="dim">{t.with ?? "—"}</td>
-                  <td className="dim">{t.kind}</td>
-                  <td>{t.status}</td>
-                  <td>
-                    <span className="tag" style={{ "--dot": PALETTE[i % PALETTE.length] } as React.CSSProperties}>
-                      {t.tag}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="ar-note">
-            Priority records only. Listen to the full set of unreleased records{" "}
-            <a className="ar-link" href={LINKS.unreleased} target="_blank" rel="noopener">
-              here
-            </a>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* 08 — Recommendations */}
+      {/* 07 — Recommendations */}
       <section className="slide ar-slide">
         <div className="ar-inner">
           <Kicker color={C.cyan}>Recommendations</Kicker>
@@ -407,7 +341,7 @@ export default function OceanArtistReview() {
         </div>
       </section>
 
-      {/* 09 — Release timeline */}
+      {/* 08 — Release timeline */}
       <section className="slide ar-slide">
         <div className="ar-inner">
           <Kicker color={C.yellow}>Release timeline</Kicker>
@@ -434,7 +368,7 @@ export default function OceanArtistReview() {
         </div>
       </section>
 
-      {/* 10 — Targets */}
+      {/* 09 — Targets */}
       <section className="slide ar-slide">
         <div className="ar-inner">
           <Kicker color={C.pink}>Targets</Kicker>
@@ -503,7 +437,7 @@ export default function OceanArtistReview() {
         </div>
       </section>
 
-      {/* 11 — Long-term goals */}
+      {/* 10 — Long-term goals */}
       <section className="slide slide--cover ar-slide">
         <Image
           src={boxHeadsForest}
@@ -552,7 +486,7 @@ export default function OceanArtistReview() {
         </div>
       </section>
 
-      {/* 12 — Listen */}
+      {/* 11 — Listen */}
       <section className="slide ar-slide">
         <div className="ar-inner">
           <Kicker color={C.blue}>Listen &amp; watch</Kicker>
@@ -568,7 +502,6 @@ export default function OceanArtistReview() {
                   <a key="lhc" className="ar-link" href={LINKS.letHimCook} target="_blank" rel="noopener">
                     Let Him Cook Radio
                   </a>,
-                  <>Insomniac Radio LUCID guest mix</>,
                 ]}
               />
             </div>
@@ -615,7 +548,7 @@ export default function OceanArtistReview() {
         </div>
       </section>
 
-      {/* 13 — Closing */}
+      {/* 12 — Closing */}
       <section className="slide slide--center ar-slide--center" style={{ gap: 28 }}>
         <Image
           src={avatarsTogether}

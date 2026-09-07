@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     description: "The artist, the numbers, the catalog and the plan.",
     type: "website",
     url: "https://eternaltilidie.com/artistreview/ocean",
-    images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-ocean-artist-review.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ocean × Eternal — Artist Review",
     description: "The artist, the numbers, the catalog and the plan.",
-    images: ["https://eternaltilidie.com/og.png"],
+    images: ["https://eternaltilidie.com/og-ocean-artist-review.jpg"],
   },
 };
 

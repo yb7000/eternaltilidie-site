@@ -268,10 +268,6 @@ const QUESTIONS: { title: string; body: string }[] = [
     title: "Real payout data",
     body: "All revenue figures here are benchmark-rate estimates, not actual DistroKid payouts — pending real data.",
   },
-  {
-    title: "Not on the A&R board",
-    body: "This is a first-look prospect pull — no pipeline stage, tier, or deal status exists yet.",
-  },
 ];
 
 export default function OceanDealReview() {
@@ -294,21 +290,10 @@ export default function OceanDealReview() {
         <section className="dr-section" style={{ gap: 26 }}>
           <Kicker color={C.cyan}>Eternal · Deal Review · Prepared 9/3/2026</Kicker>
           <h1 className="anton dr-h1">Ocean</h1>
-          <div>
-            <span className="dr-pill" style={v(C.yellow)}>
-              <i />
-              First-look pull — not yet on the A&amp;R board
-            </span>
-          </div>
-          <p className="dr-note">
-            No pipeline stage, deal status, or distributor field on file. This is a fresh prospect analysis,
-            not a refresh of a tracked deal.
-          </p>
           <p className="dr-lede">
             London/Madrid-based producer and DJ building a solo vocal-artist project. He already
             runs a real production brand — prodbyocean.com (sample packs, since 2020), a 519K-subscriber
-            tutorial YouTube channel, and production credits with Young Adz, Chip, Timbaland, JJ Esko, and
-            Lattz — and started releasing his own dance-pop singles as “Ocean” in Feb 2024.
+            tutorial YouTube channel, and production credits with Young Adz, Chip, JJ Esko, and Lattz — and started releasing his own dance-pop singles as “Ocean” in Feb 2024.
           </p>
           <p className="dr-lede">
             The catalog is currently <span className="highlight">+40.7%</span> above its pre-release
@@ -674,7 +659,7 @@ export default function OceanDealReview() {
           <Kicker color="#000">Bottom line</Kicker>
           <p>
             An established producer/DJ (519K YouTube tutorial subs, a real sample-pack business, credits with
-            Young Adz, Chip, Timbaland) making a genuine push as a solo vocal artist, 2.5 years and 18 tracks
+            Young Adz, Chip) making a genuine push as a solo vocal artist, 2.5 years and 18 tracks
             in. The catalog is +40.7% above its pre-release baseline, and unusually for this pipeline, 100% of
             that delta is attributable across a fully enumerated catalog — the growth is real and specific,
             driven by “Love Me For Real,” which is still climbing and hasn’t settled into a stable run-rate
@@ -683,8 +668,8 @@ export default function OceanDealReview() {
             monthly listeners) is thin, single-track dependency on “Preach” remains above the 25% threshold,
             and representation is unconfirmed. If there’s a case here, it’s the built-in audience/content
             machine he already operates — not yet the current single’s trajectory, which needs another 2–3
-            weeks to prove it holds. 100% independent (Salt Water / DistroKid), no label entanglements to
-            unwind, and this artist isn’t yet on the A&amp;R board.
+            weeks to prove it holds. 100% independent (Salt Water / DistroKid), and no label entanglements
+            to unwind.
           </p>
         </section>
 

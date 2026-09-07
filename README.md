@@ -10,6 +10,7 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 - `app/page.tsx` — the 12-section scroll deck (all page copy lives here)
 - `app/proposals/jasmine-yen/` — Jasmine Yen partnership proposal web deck (`/proposals/jasmine-yen`, noindex)
 - `app/artistreview/ocean/` — Ocean artist review web deck (`/artistreview/ocean`, noindex)
+- `app/dealreview/ocean/` — Ocean first-look deal review, long-form document (`/dealreview/ocean`, noindex)
 - `app/layout.tsx` — metadata (OG/Twitter cards), fonts, global shell
 - `app/globals.css` — all styling
 - `components/Deck.tsx` — scroll-snap deck: keyboard nav, pager, grain overlay

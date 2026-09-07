@@ -629,6 +629,11 @@ export default function OceanArtistReview() {
           style={{ width: "clamp(140px,18vw,200px)", height: "auto" }}
         />
         <p className="ar-sub">Let&apos;s build something eternal.</p>
+        <p className="ar-body ar-body--sm" style={{ textAlign: "center" }}>
+          <a className="ar-link" href="/dealreview/ocean">
+            Read the deal review
+          </a>
+        </p>
         <div className="closing-social">
           <a href="https://www.tiktok.com/@eternaltilidie" target="_blank" rel="noopener">
             TikTok

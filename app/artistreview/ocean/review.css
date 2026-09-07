@@ -460,13 +460,32 @@
   background: #000;
   overflow: hidden;
 }
+/* portrait pinned right on desktop; fades into the page background under the text */
+.ar-cover {
+  background: #111111;
+}
+.ar-cover-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(60vw, 960px);
+}
 .ar-cover-img {
-  object-position: 68% 22%;
+  object-position: 50% 18%;
+}
+.ar-cover-fade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #111111 0%, rgba(17, 17, 17, 0.85) 18%, rgba(17, 17, 17, 0.35) 42%, rgba(17, 17, 17, 0) 65%),
+    linear-gradient(rgba(17, 17, 17, 0.35), rgba(17, 17, 17, 0) 25%, rgba(17, 17, 17, 0) 70%, rgba(17, 17, 17, 0.75));
 }
 .ar-cover-shade {
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0.08) 70%),
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.45));
+  background: none;
+}
+.ar-cover-text {
+  max-width: min(640px, 48vw);
 }
 .ar-cover-text {
   position: relative;
@@ -475,7 +494,6 @@
   align-items: flex-start;
   gap: 22px;
   padding: 96px clamp(24px, 6vw, 96px);
-  max-width: min(720px, 60vw);
 }
 .ar-cover-text .ar-title {
   font-size: clamp(72px, 13vw, 200px);
@@ -540,11 +558,17 @@
   .ar-cover {
     align-items: flex-end;
   }
-  .ar-cover-img {
-    object-position: 60% 15%;
+  .ar-cover-media {
+    width: 100%;
   }
-  .ar-cover-shade {
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0.55) 58%, rgba(0, 0, 0, 0.92));
+  .ar-cover-img {
+    object-position: 50% 12%;
+  }
+  .ar-cover-fade {
+    background: linear-gradient(rgba(17, 17, 17, 0.25), rgba(17, 17, 17, 0) 25%, rgba(17, 17, 17, 0.55) 55%, #111111 92%);
+  }
+  .ar-cover-text {
+    max-width: none;
   }
   .ar-cover-text {
     align-items: center;

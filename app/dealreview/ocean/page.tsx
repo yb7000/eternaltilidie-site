@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "First-look deal review: consumption, attribution, catalog, audience, financial framing and deal risks.",
     type: "website",
     url: "https://eternaltilidie.com/dealreview/ocean",
-    images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-ocean-deal-review.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ocean × Eternal — Deal Review",
     description: "First-look deal review: consumption, attribution, catalog, audience, financial framing and deal risks.",
-    images: ["https://eternaltilidie.com/og.png"],
+    images: ["https://eternaltilidie.com/og-ocean-deal-review.jpg"],
   },
 };
 

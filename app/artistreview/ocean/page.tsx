@@ -6,7 +6,7 @@ import "./review.css";
 import graffitiLogo from "@/public/images/graffiti-logo.png";
 import doodleStar from "@/public/images/doodle-star.png";
 import mascot from "@/public/images/mascot.png";
-import crowdEvent from "@/public/images/crowd-event.jpg";
+import oceanCover from "@/public/images/ocean-cover.jpg";
 import crowdHearts from "@/public/images/crowd-hearts.jpg";
 import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
@@ -166,13 +166,12 @@ export default function OceanArtistReview() {
       {/* 01 — Cover */}
       <section className="slide ar-cover">
         <Image
-          src={crowdEvent}
-          alt=""
+          src={oceanCover}
+          alt="Ocean"
           fill
           priority
           sizes="100vw"
-          className="bg-img"
-          style={{ objectPosition: "center 40%", opacity: 0.7 }}
+          className="bg-img ar-cover-img"
         />
         <div className="overlay ar-cover-shade" />
         <div className="ar-cover-text">

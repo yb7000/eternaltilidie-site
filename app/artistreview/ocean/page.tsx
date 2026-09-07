@@ -152,14 +152,17 @@ export default function OceanArtistReview() {
     <Deck innerLabel="Ocean" siteLink={false}>
       {/* 01 — Cover */}
       <section className="slide ar-cover">
-        <Image
-          src={oceanCover}
-          alt="Ocean"
-          fill
-          priority
-          sizes="100vw"
-          className="bg-img ar-cover-img"
-        />
+        <div className="ar-cover-media">
+          <Image
+            src={oceanCover}
+            alt="Ocean"
+            fill
+            priority
+            sizes="(max-width: 820px) 100vw, 60vw"
+            className="bg-img ar-cover-img"
+          />
+          <div className="ar-cover-fade" />
+        </div>
         <div className="overlay ar-cover-shade" />
         <div className="ar-cover-text">
           <p className="ar-sub">Artist Review</p>

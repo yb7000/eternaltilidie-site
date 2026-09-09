@@ -279,9 +279,6 @@ export default function OceanDealReview() {
         </a>
         <div className="dr-header-right">
           <span className="dr-header-label">Ocean · Deal Review</span>
-          <a className="dr-header-link" href="/artistreview/ocean">
-            Artist review
-          </a>
         </div>
       </header>
 
@@ -681,11 +678,6 @@ export default function OceanDealReview() {
             style={{ width: "min(360px,70vw)", height: "auto" }}
           />
           <p className="dr-sub">Let’s build something eternal.</p>
-          <p className="dr-body" style={{ textAlign: "center" }}>
-            <a className="dr-link" href="/artistreview/ocean">
-              Read the artist review
-            </a>
-          </p>
           <div className="closing-social">
             <a href="https://www.tiktok.com/@eternaltilidie" target="_blank" rel="noopener">
               TikTok

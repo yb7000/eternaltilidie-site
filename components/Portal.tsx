@@ -10,8 +10,8 @@ import { FORM_NAME, STEPS, isVisible, stepMissing, toRecord, type Answers, type 
 const PALETTE = ["#f97fc0", "#f2543d", "#f5c518", "#6abf40", "#3b82f6", "#2ec4e6"];
 const color = (i: number) => PALETTE[i % PALETTE.length];
 
-type Mode = "signin" | "signup" | "intake" | "done";
-type Account = { username: string; name: string; password: string };
+type Mode = "start" | "intake" | "done";
+type Account = { username: string; name: string };
 
 const DRAFT_PREFIX = "eternal-portal:";
 const draftKey = (email: string) => DRAFT_PREFIX + email.trim().toLowerCase();
@@ -193,21 +193,22 @@ function Field({
 // ---------- portal ----------
 
 export default function Portal() {
-  const [mode, setMode] = useState<Mode>("signup");
-  const [account, setAccount] = useState<Account>({ username: "", name: "", password: "" });
-  const [authError, setAuthError] = useState<string | null>(null);
+  const [mode, setMode] = useState<Mode>("start");
+  const [account, setAccount] = useState<Account>({ username: "", name: "" });
+  const [startError, setStartError] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Answers>({});
   const [step, setStep] = useState(0);
   const [showErrors, setShowErrors] = useState(false);
   const [busy, setBusy] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [resumed, setResumed] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
 
   const current = STEPS[step];
   const tint = color(step);
   const missing = useMemo(() => stepMissing(current, answers), [current, answers]);
 
-  // persist the draft as the user goes
+  // persist the draft on this device as the user goes
   useEffect(() => {
     if (mode !== "intake" || !account.username) return;
     writeDraft(account.username, { answers, step });
@@ -219,58 +220,24 @@ export default function Portal() {
 
   const scrollTop = () => topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  const startSignup = (e: React.FormEvent) => {
+  const start = (e: React.FormEvent) => {
     e.preventDefault();
     const email = account.username.trim();
-    if (!EMAIL_RE.test(email)) return setAuthError("Enter a valid email address.");
-    if (account.name.trim().length < 2) return setAuthError("Tell us your name or artist name.");
-    if (account.password.length < 8) return setAuthError("Password needs at least 8 characters.");
-    setAuthError(null);
+    if (!EMAIL_RE.test(email)) return setStartError("Enter a valid email address.");
+    if (account.name.trim().length < 2) return setStartError("Tell us your name or artist name.");
+    setStartError(null);
     const draft = readDraft(email);
-    if (draft?.submitted) {
-      setAnswers(draft.answers);
-      setMode("done");
-      return;
-    }
-    if (draft) {
+    if (draft && !draft.submitted) {
       setAnswers(draft.answers);
       setStep(Math.min(draft.step, STEPS.length - 1));
+      setResumed(true);
+    } else {
+      setAnswers({});
+      setStep(0);
+      setResumed(false);
     }
     setMode("intake");
-  };
-
-  const signin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const email = account.username.trim();
-    if (!EMAIL_RE.test(email)) return setAuthError("Enter a valid email address.");
-    if (!account.password) return setAuthError("Enter your password.");
-    setAuthError(null);
-    setBusy(true);
-    try {
-      const res = await fetch("/api/portal", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ action: "signin", username: email, password: account.password }),
-      });
-      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string; name?: string };
-      if (!res.ok || !data.ok) {
-        setAuthError(data.error || "We couldn’t sign you in. Check your email and password.");
-        return;
-      }
-      const draft = readDraft(email);
-      if (data.name) setAccount((a) => ({ ...a, name: data.name as string }));
-      if (draft) {
-        setAnswers(draft.answers);
-        setStep(Math.min(draft.step, STEPS.length - 1));
-        setMode(draft.submitted ? "done" : "intake");
-      } else {
-        setMode("intake");
-      }
-    } catch {
-      setAuthError("Network error. Try again in a moment.");
-    } finally {
-      setBusy(false);
-    }
+    scrollTop();
   };
 
   const next = () => {
@@ -289,7 +256,7 @@ export default function Portal() {
 
   const back = () => {
     setShowErrors(false);
-    if (step === 0) setMode("signup");
+    if (step === 0) setMode("start");
     else setStep(step - 1);
     scrollTop();
   };
@@ -302,10 +269,8 @@ export default function Portal() {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          action: "signup",
           username: account.username.trim(),
           name: account.name.trim(),
-          password: account.password,
           answers: toRecord(answers),
         }),
       });
@@ -354,54 +319,27 @@ export default function Portal() {
       />
 
       <main className="pt-page" ref={topRef}>
-        {(mode === "signin" || mode === "signup") && (
+        {mode === "start" && (
           <section className="pt-card pt-auth">
             <div className="pt-auth-head">
               <Image src={mascot} alt="" className="pt-mascot" style={{ width: "clamp(88px,11vw,124px)", height: "auto" }} />
               <p className="pt-kicker">
                 <i style={{ background: "#f5c518" }} />
-                {mode === "signup" ? "Join Eternal" : "Welcome back"}
+                {FORM_NAME}
               </p>
-              <h1 className="anton pt-h1">{mode === "signup" ? "Tell us who you are" : "Sign in"}</h1>
+              <h1 className="anton pt-h1">Tell us who you are</h1>
               <p className="pt-lede">
-                {mode === "signup"
-                  ? `Create your account, then walk through ${FORM_NAME}: a short intake that is how we get to know you before we work together.`
-                  : "Pick up where you left off, or revisit what you told us."}
+                Ten short steps. When you finish, we write your Reflection: a personal read on where you
+                are, what you need, and a daily practice. It lands in your inbox.
               </p>
             </div>
 
-            <div className="pt-tabs" role="tablist" aria-label="Sign up or sign in">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={mode === "signup"}
-                className={mode === "signup" ? "on" : undefined}
-                onClick={() => {
-                  setMode("signup");
-                  setAuthError(null);
-                }}
-              >
-                Sign up
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={mode === "signin"}
-                className={mode === "signin" ? "on" : undefined}
-                onClick={() => {
-                  setMode("signin");
-                  setAuthError(null);
-                }}
-              >
-                Sign in
-              </button>
-            </div>
-
-            <form className="pt-form" onSubmit={mode === "signup" ? startSignup : signin} noValidate>
+            <form className="pt-form" onSubmit={start} noValidate>
               <div className="pt-field">
                 <label className="pt-label" htmlFor="username">
                   Email
                 </label>
+                <p className="pt-hint">This is where your Reflection is sent. We ask for nothing else.</p>
                 <input
                   id="username"
                   className="pt-input"
@@ -413,64 +351,32 @@ export default function Portal() {
                   onChange={(e) => setAccount({ ...account, username: e.target.value })}
                 />
               </div>
-              {mode === "signup" && (
-                <div className="pt-field">
-                  <label className="pt-label" htmlFor="name">
-                    Name or artist name
-                  </label>
-                  <input
-                    id="name"
-                    className="pt-input"
-                    type="text"
-                    autoComplete="name"
-                    placeholder="ARA"
-                    value={account.name}
-                    onChange={(e) => setAccount({ ...account, name: e.target.value })}
-                  />
-                </div>
-              )}
               <div className="pt-field">
-                <label className="pt-label" htmlFor="password">
-                  Password
+                <label className="pt-label" htmlFor="name">
+                  Name or artist name
                 </label>
                 <input
-                  id="password"
+                  id="name"
                   className="pt-input"
-                  type="password"
-                  autoComplete={mode === "signup" ? "new-password" : "current-password"}
-                  placeholder={mode === "signup" ? "At least 8 characters" : "••••••••"}
-                  value={account.password}
-                  onChange={(e) => setAccount({ ...account, password: e.target.value })}
+                  type="text"
+                  autoComplete="name"
+                  placeholder="ARA"
+                  value={account.name}
+                  onChange={(e) => setAccount({ ...account, name: e.target.value })}
                 />
               </div>
-              {authError && (
+              {startError && (
                 <p className="pt-error" role="alert">
-                  {authError}
+                  {startError}
                 </p>
               )}
               <div className="pt-actions">
-                <button type="submit" className="pt-btn pt-btn--primary" disabled={busy}>
-                  {busy ? "One sec…" : mode === "signup" ? "Start the intake →" : "Sign in →"}
+                <button type="submit" className="pt-btn pt-btn--primary">
+                  Begin →
                 </button>
               </div>
               <p className="pt-fine">
-                {mode === "signup" ? (
-                  <>
-                    Already have an account?{" "}
-                    <button type="button" className="pt-linkbtn" onClick={() => setMode("signin")}>
-                      Sign in
-                    </button>
-                    .
-                  </>
-                ) : (
-                  <>
-                    New here?{" "}
-                    <button type="button" className="pt-linkbtn" onClick={() => setMode("signup")}>
-                      Create an account
-                    </button>
-                    .
-                  </>
-                )}
+                Left halfway last time? Enter the same email on this device and you pick up where you stopped.
               </p>
             </form>
             <Dots />
@@ -498,8 +404,9 @@ export default function Portal() {
               {current.intro && <p className="pt-lede">{current.intro}</p>}
               <p className="pt-who">
                 {account.name || account.username}
+                {resumed && step > 0 ? " · picking up where you left off" : ""}
                 {" · "}
-                <button type="button" className="pt-linkbtn" onClick={() => setMode("signup")}>
+                <button type="button" className="pt-linkbtn" onClick={() => setMode("start")}>
                   not you?
                 </button>
               </p>
@@ -535,7 +442,7 @@ export default function Portal() {
                   ← Back
                 </button>
                 <button type="submit" className="pt-btn pt-btn--primary" disabled={busy}>
-                  {busy ? "Sending…" : step === STEPS.length - 1 ? "Submit" : "Next →"}
+                  {busy ? "Sending…" : step === STEPS.length - 1 ? "Send my answers" : "Next →"}
                 </button>
               </div>
               <p className="pt-fine">Your answers save on this device as you go.</p>
@@ -548,24 +455,14 @@ export default function Portal() {
             <Image src={mascot} alt="" className="pt-mascot" style={{ width: "clamp(110px,14vw,160px)", height: "auto" }} />
             <p className="pt-kicker">
               <i style={{ background: "#6abf40" }} />
-              You’re in
+              Check your inbox
             </p>
             <h1 className="anton pt-h1">Thank you, {(account.name || account.username).split(" ")[0]}.</h1>
             <p className="pt-lede">
-              We read every intake. Someone from the Eternal team will reach out at{" "}
-              <strong>{account.username}</strong>.
+              Your Reflection is being written now and will land at <strong>{account.username}</strong>{" "}
+              within a few minutes. If it does not show up, check your spam folder.
             </p>
             <div className="pt-actions pt-actions--center">
-              <button
-                type="button"
-                className="pt-btn"
-                onClick={() => {
-                  setStep(0);
-                  setMode("intake");
-                }}
-              >
-                Review my answers
-              </button>
               <a className="pt-btn pt-btn--primary" href="https://eternaltilidie.com">
                 Back to Eternal →
               </a>

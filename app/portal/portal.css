@@ -80,9 +80,9 @@
   text-align: center;
 }
 
-/* the mascot is white art on a black square; screen it onto the card */
+/* the mascot is white art on a #111 square; lighten lets the card show through it */
 .pt-mascot {
-  mix-blend-mode: screen;
+  mix-blend-mode: lighten;
 }
 
 /* type */

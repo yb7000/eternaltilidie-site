@@ -11,6 +11,7 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 - `app/proposals/jasmine-yen/` — Jasmine Yen partnership proposal web deck (`/proposals/jasmine-yen`, noindex)
 - `app/artistreview/ocean/` — Ocean artist review web deck (`/artistreview/ocean`, noindex)
 - `app/dealreview/ocean/` — Ocean first-look deal review, long-form document (`/dealreview/ocean`, noindex)
+- `app/portal/` — sign-up / sign-in portal with the artist intake (`/portal`, noindex); questions live in `lib/intake.ts`, the flow in `components/Portal.tsx`, submissions go to `app/api/portal/route.ts`
 - `app/layout.tsx` — metadata (OG/Twitter cards), fonts, global shell
 - `app/globals.css` — all styling
 - `components/Deck.tsx` — scroll-snap deck: keyboard nav, pager, grain overlay
@@ -24,6 +25,17 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 npm install
 npm run dev
 ```
+
+## Portal
+
+`/portal` mirrors "The Reflection Wizard", the Airtable intake form behind
+reflector.createsafe.io, restyled in the Eternal look. Field keys and option lists
+match that table (`reflector` in base `app5WG0xIVwBPorx9`), so submissions land in
+the same place. Set `AIRTABLE_TOKEN` (see `.env.example`) on Vercel to store
+submissions; without it the API route accepts and logs them, and the form still
+saves drafts in the browser. Sign-in currently only checks that an intake exists
+for the email — there is no password store yet, so plug in an auth provider
+before treating accounts as secure.
 
 ## Deploy
 

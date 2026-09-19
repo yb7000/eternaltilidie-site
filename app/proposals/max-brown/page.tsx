@@ -8,21 +8,21 @@ import doodleHeart from "@/public/images/doodle-heart.png";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
 
 export const metadata: Metadata = {
-  title: "Max Brown × Eternal",
+  title: "Max Brown Internship Proposal",
   description: "A letter to Max Brown: a six-month internship proposal from Eternal.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "Max Brown × Eternal",
+    title: "Max Brown Internship Proposal",
     description: "A letter. A six-month internship proposal.",
     type: "website",
     url: "https://eternaltilidie.com/proposals/max-brown",
-    images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-max-brown.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Max Brown × Eternal",
+    title: "Max Brown Internship Proposal",
     description: "A letter. A six-month internship proposal.",
-    images: ["https://eternaltilidie.com/og.png"],
+    images: ["https://eternaltilidie.com/og-max-brown.jpg"],
   },
 };
 

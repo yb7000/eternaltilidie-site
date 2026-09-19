@@ -384,9 +384,11 @@ export default function MaxBrownLetter() {
             <a
               className="lt-cta"
               style={v(C.yellow)}
-              href="mailto:daouda@createsafe.io?subject=Max%20x%20Eternal%20%E2%80%94%20first%20ops%20meeting"
+              href="https://calendly.com/daoudaleonard"
+              target="_blank"
+              rel="noopener"
             >
-              Let&rsquo;s set it
+              Book the call
             </a>
             <a
               className="lt-cta lt-cta--ghost"

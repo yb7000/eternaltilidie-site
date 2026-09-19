@@ -372,10 +372,6 @@ export default function MaxBrownLetter() {
 
         {/* Sign-off */}
         <section className="lt-section">
-          <p className="lt-body">
-            You wrote that you feel empowered because you&rsquo;ve been using what&rsquo;s at your disposal to make
-            something of yourself. Consider this one more thing at your disposal.
-          </p>
           <p className="lt-body">Talk soon,</p>
           <div className="lt-sign">
             <span className="name">Daouda Leonard</span>

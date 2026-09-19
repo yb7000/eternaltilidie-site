@@ -129,12 +129,6 @@ const TRACKS: Track[] = [
     bullets: [
       "Product review, Q&A and bug support for one of the new Eternal apps.",
       "Manage live broadcast recordings and their metadata.",
-    ],
-  },
-  {
-    name: "Operations",
-    desc: "The infrastructure that makes the rest of it possible.",
-    bullets: [
       "Manage Biscuit Run logistics.",
       "Build out the CRM and how people access it. Addy.",
     ],
@@ -221,7 +215,6 @@ export default function MaxBrownLetter() {
           <ul className="lt-cards">
             {PROJECTS.map((p) => (
               <li key={p.name} className="lt-card" style={v(p.color)}>
-                <span className="label">Project</span>
                 <span className="num">{p.name}</span>
                 <span className="sub">{p.sub}</span>
               </li>
@@ -343,11 +336,12 @@ export default function MaxBrownLetter() {
         {/* The ask */}
         <section className="lt-ask">
           <Kicker color="#000">The ask</Kicker>
-          <h2 className="anton lt-h2">Call me. Let&rsquo;s set the first ops meeting.</h2>
+          <h2 className="anton lt-h2">Let&rsquo;s set the next meeting.</h2>
           <p>
             I&rsquo;m getting all of this memorialized in a proper internship document for Drexel. In the
-            meantime, read this, sit with it, and give me a call so we can align on the first ops meeting.
-            If something in here feels off, say so; it&rsquo;s a proposal, not a contract yet.
+            meantime, read this, sit with it, and schedule our next session via my Calendly link. We will
+            use that time to answer any questions and go over the scope of work to gain further shared
+            alignment.
           </p>
           <div className="lt-cta-row">
             <a
@@ -357,14 +351,7 @@ export default function MaxBrownLetter() {
               target="_blank"
               rel="noopener"
             >
-              Book the call
-            </a>
-            <a
-              className="lt-cta lt-cta--ghost"
-              style={v(C.cyan)}
-              href="mailto:daouda@createsafe.io?subject=Max%20x%20Eternal%20%E2%80%94%20questions"
-            >
-              I have questions
+              Schedule on Calendly
             </a>
           </div>
         </section>

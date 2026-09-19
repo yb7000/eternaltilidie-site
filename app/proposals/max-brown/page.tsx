@@ -220,9 +220,6 @@ export default function MaxBrownLetter() {
               </li>
             ))}
           </ul>
-          <p className="lt-body">
-            Small team, a lot happening, no back row.
-          </p>
         </section>
 
         {/* Standing orders */}
@@ -308,7 +305,7 @@ export default function MaxBrownLetter() {
                 Kennyflowers and Jasmine Yen. That&rsquo;s the bar, and it&rsquo;s the same bar I hold myself to.
               </p>
               <p>
-                The credit line on the other side of it reads: <strong style={{ color: C.yellow }}>skilled at
+                The credit line on the other side of it reads: <strong style={{ color: C.yellow }}>Skilled at
                 A&amp;R and production management for an artist and artist manager.</strong>
               </p>
             </div>

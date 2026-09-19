@@ -117,7 +117,7 @@ const TRACKS: Track[] = [
   },
   {
     name: "Jasmine Yen",
-    desc: "The family side.",
+    desc: "Artist Management.",
     bullets: [
       "Schedule and attend meetings with Daouda and the Yen family.",
       "Keep track of what Daouda needs to complete for them, and make sure he completes it.",
@@ -198,7 +198,7 @@ export default function MaxBrownLetter() {
             className="lt-floaty"
             style={{ right: "14%", top: "150px", width: "clamp(34px,4vw,56px)", height: "auto", opacity: 0.7, animationDuration: "11s" }}
           />
-          <Kicker color={C.cyan}>Eternal · Six-month internship proposal · September 19, 2026</Kicker>
+          <Kicker color={C.cyan}>Six-month internship proposal · September 19, 2026</Kicker>
           <h1 className="anton lt-h1">
             Max,
             <br />
@@ -228,8 +228,7 @@ export default function MaxBrownLetter() {
             ))}
           </ul>
           <p className="lt-body">
-            Small team, a lot happening, no back row. Whoever is in the room is in the work. That&rsquo;s the
-            point of doing this here rather than at a place where an intern watches from a desk.
+            Small team, a lot happening, no back row.
           </p>
         </section>
 

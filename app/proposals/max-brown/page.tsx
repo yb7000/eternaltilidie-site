@@ -205,40 +205,10 @@ export default function MaxBrownLetter() {
             <span className="accent">let&rsquo;s work.</span>
           </h1>
           <p className="lt-lede">
-            We&rsquo;ve talked three times this week. Every call ended the same way: with me wanting to keep
-            going. So instead of another call, here&rsquo;s a letter. It lays out the six-month role we
-            discussed, what you&rsquo;d actually be doing every day, and what you&rsquo;d walk away with.
-          </p>
-          <p className="lt-lede">
-            Short version: <strong>come intern at Eternal.</strong> Learn the inside of a label by running
-            the inside of one.
+            <strong>Come intern at Eternal.</strong> Learn the inside of building a production brand,
+            artist management and how a label works.
           </p>
           <Dots />
-        </section>
-
-        {/* Why you */}
-        <section className="lt-section">
-          <SectionHead kicker="Why you" color={C.pink} title="You already told us what you want" />
-          <p className="lt-body">When you went through the Reflection Wizard, you wrote this:</p>
-          <blockquote className="lt-quote" style={v(C.pink)}>
-            <p>
-              &ldquo;The kind of help that I am looking for lies in the music business. I want to learn the ins
-              and outs of label operation as well as how to not only build an artist, but how to keep them
-              thriving and pushing the limits.&rdquo;
-            </p>
-            <cite>Max Brown, The Reflection Wizard</cite>
-          </blockquote>
-          <p className="lt-body">
-            That is, almost word for word, what this role is. It&rsquo;s also the thing you can&rsquo;t learn from
-            the outside. You can read about it, you can watch it on YouTube, but the real education is being
-            in the room when a decision gets made and understanding why.
-          </p>
-          <p className="lt-body">
-            Two other things you wrote stuck with me. One: when you hear a sound, you spend hours recreating
-            it until you crack the code. Two: you&rsquo;re extremely adaptable, and you can look at a situation
-            from every angle. Those are producer instincts. They are also, exactly, operator instincts. The
-            difference between the two is just what you point them at.
-          </p>
         </section>
 
         {/* The role */}

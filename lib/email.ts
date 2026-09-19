@@ -174,8 +174,8 @@ export type Mail = {
 
 export async function sendMail(mail: Mail): Promise<{ id: string }> {
   const key = process.env.RESEND_API_KEY;
-  const from = process.env.PORTAL_FROM_EMAIL;
-  if (!key || !from) throw new Error("RESEND_API_KEY and PORTAL_FROM_EMAIL must be set to send email");
+  const from = process.env.REFLECTOR_FROM_EMAIL;
+  if (!key || !from) throw new Error("RESEND_API_KEY and REFLECTOR_FROM_EMAIL must be set to send email");
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },

@@ -1,4 +1,4 @@
-// Intake questionnaire schema for the Eternal portal.
+// Intake questionnaire schema for Reflector, the Eternal intake.
 //
 // Mirrors "The Reflection Wizard", the Airtable form behind reflector.createsafe.io.
 // Field keys are the column names of that table (username, name, goals, goalsList,

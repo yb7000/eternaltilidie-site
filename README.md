@@ -12,7 +12,7 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 - `app/proposals/max-brown/` — Max Brown internship proposal, written as a letter (`/proposals/max-brown`, noindex)
 - `app/artistreview/ocean/` — Ocean artist review web deck (`/artistreview/ocean`, noindex)
 - `app/dealreview/ocean/` — Ocean first-look deal review, long-form document (`/dealreview/ocean`, noindex)
-- `app/portal/` — The Reflection Wizard, the artist intake (`/portal`, noindex); questions in `lib/intake.ts`, the flow in `components/Portal.tsx`, the API in `app/api/portal/route.ts`, the Reflection generator in `lib/reflection.ts`, email in `lib/email.ts`, the pipeline in `lib/pipeline.ts`
+- `app/reflector/` — Reflector, the artist intake (`/reflector`, noindex; `/portal` redirects there); questions in `lib/intake.ts`, the flow in `components/Reflector.tsx`, the API in `app/api/reflector/route.ts`, the Reflection generator in `lib/reflection.ts`, email in `lib/email.ts`, the pipeline in `lib/pipeline.ts`
 - `app/layout.tsx` — metadata (OG/Twitter cards), fonts, global shell
 - `app/globals.css` — all styling
 - `components/Deck.tsx` — scroll-snap deck: keyboard nav, pager, grain overlay
@@ -27,9 +27,9 @@ npm install
 npm run dev
 ```
 
-## Portal
+## Reflector
 
-`/portal` is Eternal's version of "The Reflection Wizard", the intake behind
+`/reflector` is Eternal's version of "The Reflection Wizard", the intake behind
 reflector.createsafe.io. It asks only for an email and a name, then walks through the
 same ten steps. Nothing is stored: when the artist submits, the API route answers at
 once and then, after the response, writes their **Reflection** with Claude and emails

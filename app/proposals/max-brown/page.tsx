@@ -120,7 +120,7 @@ const TRACKS: Track[] = [
     desc: "Artist Management.",
     bullets: [
       "Schedule and attend meetings with Daouda and the Yen family.",
-      "Keep track of what Daouda needs to complete for them, and make sure he completes it.",
+      "Keep track of what Daouda needs to complete for Jasmine, and make sure he completes it.",
     ],
   },
   {
@@ -129,8 +129,8 @@ const TRACKS: Track[] = [
     bullets: [
       "Product review, Q&A and bug support for one of the new Eternal apps.",
       "Manage live broadcast recordings and their metadata.",
-      "Manage Biscuit Run logistics.",
-      "Build out the CRM and how people access it. Addy.",
+      "Build out the CRM information network and how people access it.",
+      "Assist Langa with distribution support tasks.",
     ],
   },
 ];
@@ -160,9 +160,9 @@ const LEARN: { title: string; body: string }[] = [
 
 const WE_GIVE: string[] = [
   "A seat inside a working label, not a classroom version of one.",
-  "Direct time with Daouda and Langa, every week: real questions, real answers, real decisions.",
+  "Direct time with Daouda, other co-founders and wider artist teams, every week: real questions, real answers, real decisions.",
   "The tools we actually run on, including the apps you'll be helping test.",
-  "Internship credit from CreateSafe, Inc. to Drexel University.",
+  "Internship credit from CreateSafe, Inc.",
 ];
 
 export default function MaxBrownLetter() {
@@ -172,9 +172,6 @@ export default function MaxBrownLetter() {
         <a className="brand" href="https://eternaltilidie.com">
           <Image src={graffitiLogo} alt="Eternal" style={{ width: 78, height: "auto" }} />
         </a>
-        <div className="lt-header-right">
-          <span className="lt-header-label">A letter to Max Brown</span>
-        </div>
       </header>
 
       <main className="lt-page">
@@ -266,26 +263,16 @@ export default function MaxBrownLetter() {
           <SectionHead kicker="How it works" color={C.green} title="The shape of it">
             Built around Drexel, not against it. Your studies and your music come first.
           </SectionHead>
-          <ul className="lt-cards">
+          <ul className="lt-cards lt-cards--2">
             <li className="lt-card" style={v(C.green)}>
               <span className="label">Length</span>
               <span className="num">6 months</span>
               <span className="sub">the role as we discussed it</span>
             </li>
             <li className="lt-card" style={v(C.blue)}>
-              <span className="label">Reports to</span>
+              <span className="label">Reporting to</span>
               <span className="num">Daouda Leonard</span>
               <span className="sub">direct support, day to day</span>
-            </li>
-            <li className="lt-card" style={v(C.pink)}>
-              <span className="label">Alongside</span>
-              <span className="num">Langa Kambi-Shamba</span>
-              <span className="sub">co-founder</span>
-            </li>
-            <li className="lt-card" style={v(C.yellow)}>
-              <span className="label">Credit</span>
-              <span className="num">Drexel University</span>
-              <span className="sub">internship credit from CreateSafe, Inc.</span>
             </li>
           </ul>
           <div className="lt-split">

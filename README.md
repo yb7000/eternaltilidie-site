@@ -9,6 +9,7 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 
 - `app/page.tsx` — the 12-section scroll deck (all page copy lives here)
 - `app/proposals/jasmine-yen/` — Jasmine Yen partnership proposal web deck (`/proposals/jasmine-yen`, noindex)
+- `app/proposals/max-brown/` — Max Brown internship proposal, written as a letter (`/proposals/max-brown`, noindex)
 - `app/artistreview/ocean/` — Ocean artist review web deck (`/artistreview/ocean`, noindex)
 - `app/dealreview/ocean/` — Ocean first-look deal review, long-form document (`/dealreview/ocean`, noindex)
 - `app/portal/` — The Reflection Wizard, the artist intake (`/portal`, noindex); questions in `lib/intake.ts`, the flow in `components/Portal.tsx`, the API in `app/api/portal/route.ts`, the Reflection generator in `lib/reflection.ts`, email in `lib/email.ts`, the pipeline in `lib/pipeline.ts`

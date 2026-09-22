@@ -13,7 +13,7 @@ const color = (i: number) => PALETTE[i % PALETTE.length];
 type Mode = "start" | "intake" | "done";
 type Account = { username: string; name: string };
 
-const DRAFT_PREFIX = "eternal-portal:";
+const DRAFT_PREFIX = "eternal-reflector:";
 const draftKey = (email: string) => DRAFT_PREFIX + email.trim().toLowerCase();
 
 function readDraft(email: string): { answers: Answers; step: number; submitted?: boolean } | null {
@@ -190,9 +190,9 @@ function Field({
   );
 }
 
-// ---------- portal ----------
+// ---------- reflector ----------
 
-export default function Portal() {
+export default function Reflector() {
   const [mode, setMode] = useState<Mode>("start");
   const [account, setAccount] = useState<Account>({ username: "", name: "" });
   const [startError, setStartError] = useState<string | null>(null);
@@ -265,7 +265,7 @@ export default function Portal() {
     setBusy(true);
     setSubmitError(null);
     try {
-      const res = await fetch("/api/portal", {
+      const res = await fetch("/api/reflector", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
@@ -296,7 +296,7 @@ export default function Portal() {
           <Image src={graffitiLogo} alt="Eternal" style={{ width: 78, height: "auto" }} />
         </a>
         <div className="pt-header-right">
-          <span className="pt-header-label">Portal</span>
+          <span className="pt-header-label">Reflector</span>
           {mode === "intake" && (
             <span className="pt-header-count">
               {String(step + 1).padStart(2, "0")} / {String(STEPS.length).padStart(2, "0")}

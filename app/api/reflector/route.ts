@@ -1,14 +1,14 @@
 import { NextResponse, after } from "next/server";
 import { cleanAnswers, isConfigured, processSubmission } from "@/lib/pipeline";
 
-// Portal API: receives a completed Reflection Wizard, answers right away, then
+// Reflector API: receives a completed Reflection Wizard, answers right away, then
 // writes the Reflection and emails it after the response has been sent.
 //
 // Configure on Vercel (see .env.example):
 //   ANTHROPIC_API_KEY     writes the Reflection
 //   RESEND_API_KEY        sends the emails
-//   PORTAL_FROM_EMAIL     verified sender, e.g. "Eternal <reflections@eternaltilidie.com>"
-//   PORTAL_NOTIFY_EMAIL   team inbox that gets a copy with every answer attached
+//   REFLECTOR_FROM_EMAIL     verified sender, e.g. "Eternal <reflections@eternaltilidie.com>"
+//   REFLECTOR_NOTIFY_EMAIL   team inbox that gets a copy with every answer attached
 // Nothing is stored server-side; the team copy is the record.
 
 export const runtime = "nodejs";
@@ -41,8 +41,8 @@ export async function POST(req: Request) {
   if (!cfg.generate || !cfg.mail) {
     // Not wired up yet: accept and log so the front end can be exercised.
     console.log(
-      `[portal] submission from ${email} (${name}) not processed: ` +
-        `${cfg.generate ? "" : "ANTHROPIC_API_KEY missing "}${cfg.mail ? "" : "RESEND_API_KEY/PORTAL_FROM_EMAIL missing"}`,
+      `[reflector] submission from ${email} (${name}) not processed: ` +
+        `${cfg.generate ? "" : "ANTHROPIC_API_KEY missing "}${cfg.mail ? "" : "RESEND_API_KEY/REFLECTOR_FROM_EMAIL missing"}`,
       JSON.stringify(answers)
     );
     return NextResponse.json({ ok: true, processed: false }, { status: 202 });

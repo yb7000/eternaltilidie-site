@@ -118,7 +118,7 @@ export function answersTranscript(name: string, answers: Record<string, string>)
   return lines.join("\n");
 }
 
-export const REFLECTION_MODEL = process.env.PORTAL_MODEL || "claude-opus-5";
+export const REFLECTION_MODEL = process.env.REFLECTOR_MODEL || "claude-opus-5";
 
 export async function generateReflection(name: string, answers: Record<string, string>): Promise<Reflection> {
   const client = new Anthropic();

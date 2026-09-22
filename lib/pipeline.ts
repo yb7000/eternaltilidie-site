@@ -33,7 +33,7 @@ export function cleanAnswers(raw: unknown): Record<string, string> {
 export function isConfigured(): { generate: boolean; mail: boolean } {
   return {
     generate: Boolean(process.env.ANTHROPIC_API_KEY),
-    mail: Boolean(process.env.RESEND_API_KEY && process.env.PORTAL_FROM_EMAIL),
+    mail: Boolean(process.env.RESEND_API_KEY && process.env.REFLECTOR_FROM_EMAIL),
   };
 }
 
@@ -43,7 +43,7 @@ export async function processSubmission(
 ): Promise<{ reflection: Reflection | null; error?: string }> {
   const generate = deps.generate ?? generateReflection;
   const send = deps.send ?? sendMail;
-  const tag = `[portal] ${sub.email}`;
+  const tag = `[reflector] ${sub.email}`;
 
   let reflection: Reflection | null = null;
   let error: string | undefined;
@@ -62,7 +62,7 @@ export async function processSubmission(
         subject: `${reflection.salutation}, your Reflection from Eternal`,
         html: renderReflectionHtml(reflection),
         text: renderReflectionText(reflection),
-        replyTo: process.env.PORTAL_REPLY_TO || process.env.PORTAL_NOTIFY_EMAIL,
+        replyTo: process.env.REFLECTOR_REPLY_TO || process.env.REFLECTOR_NOTIFY_EMAIL,
       });
     } else {
       await send({
@@ -70,7 +70,7 @@ export async function processSubmission(
         subject: "We have your answers",
         html: renderReceivedHtml(sub.name),
         text: `Thank you, ${sub.name}. We have your answers. Your Reflection is being written by hand this time, and someone from Eternal will send it to you personally.`,
-        replyTo: process.env.PORTAL_REPLY_TO || process.env.PORTAL_NOTIFY_EMAIL,
+        replyTo: process.env.REFLECTOR_REPLY_TO || process.env.REFLECTOR_NOTIFY_EMAIL,
       });
     }
   } catch (err) {
@@ -79,7 +79,7 @@ export async function processSubmission(
   }
 
   // 3. the team
-  const notify = process.env.PORTAL_NOTIFY_EMAIL;
+  const notify = process.env.REFLECTOR_NOTIFY_EMAIL;
   if (notify) {
     try {
       await send({

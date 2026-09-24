@@ -131,6 +131,7 @@ const TRACKS: Track[] = [
       "Manage live broadcast recordings and their metadata.",
       "Build out the CRM information network and how people access it.",
       "Assist Langa with distribution support tasks.",
+      "Management of the Eternal DJ mix series.",
     ],
   },
 ];
@@ -163,6 +164,7 @@ const WE_GIVE: string[] = [
   "Direct time with Daouda, other co-founders and wider artist teams, every week: real questions, real answers, real decisions.",
   "The tools we actually run on, including the apps you'll be helping test.",
   "Internship credit from CreateSafe, Inc.",
+  "Review of your records and production ideas with advice, and direct intros to pitch your production.",
 ];
 
 export default function MaxBrownLetter() {

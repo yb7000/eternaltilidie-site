@@ -12,11 +12,11 @@ import boxHeadsForest from "@/public/images/box-heads-forest.jpg";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
 
 export const metadata: Metadata = {
-  title: "Ocean × Eternal — Artist Review",
+  title: "Ocean — Eternal Artist CV",
   description: "Eternal's artist review of Ocean: the artist, the numbers, the catalog and the plan.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "Ocean × Eternal — Artist Review",
+    title: "Ocean — Eternal Artist CV",
     description: "The artist, the numbers, the catalog and the plan.",
     type: "website",
     url: "https://eternaltilidie.com/artistreview/ocean",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ocean × Eternal — Artist Review",
+    title: "Ocean — Eternal Artist CV",
     description: "The artist, the numbers, the catalog and the plan.",
     images: ["https://eternaltilidie.com/og-ocean-artist-review.jpg"],
   },

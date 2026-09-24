@@ -6,11 +6,11 @@ import graffitiLogo from "@/public/images/graffiti-logo.png";
 import avatarsTogether from "@/public/images/avatars-together.jpg";
 
 export const metadata: Metadata = {
-  title: "Ocean × Eternal — Deal Review",
+  title: "Ocean — Eternal Deal Review",
   description: "Eternal’s first-look deal review of Ocean: consumption, attribution, catalog, audience, financial framing and deal risks.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "Ocean × Eternal — Deal Review",
+    title: "Ocean — Eternal Deal Review",
     description: "First-look deal review: consumption, attribution, catalog, audience, financial framing and deal risks.",
     type: "website",
     url: "https://eternaltilidie.com/dealreview/ocean",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ocean × Eternal — Deal Review",
+    title: "Ocean — Eternal Deal Review",
     description: "First-look deal review: consumption, attribution, catalog, audience, financial framing and deal risks.",
     images: ["https://eternaltilidie.com/og-ocean-deal-review.jpg"],
   },

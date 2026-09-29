@@ -9,6 +9,7 @@ Built with [Next.js](https://nextjs.org) (App Router) and deployed on Vercel.
 
 - `app/page.tsx` — the 12-section scroll deck (all page copy lives here)
 - `app/proposals/jasmine-yen/` — Jasmine Yen partnership proposal web deck (`/proposals/jasmine-yen`, noindex)
+- `app/meet/jasmine-yen/` — Meet Jasmine Yen, her story explained for kids (`/meet/jasmine-yen`, noindex); every image in `public/images/jasmine/` shows in the gallery; the song, video and link lists are at the top of the page
 - `app/proposals/max-brown/` — Max Brown internship proposal, written as a letter (`/proposals/max-brown`, noindex)
 - `app/artistreview/ocean/` — Ocean artist review web deck (`/artistreview/ocean`, noindex)
 - `app/dealreview/ocean/` — Ocean first-look deal review, long-form document (`/dealreview/ocean`, noindex)

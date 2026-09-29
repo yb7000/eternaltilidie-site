@@ -43,8 +43,7 @@ const v = (color: string) => ({ "--dot": color } as React.CSSProperties);
 /* ---------- media ----------
  * Photos: every image in public/images/jasmine/ (.jpg, .jpeg, .png, .webp) shows up
  * in the gallery, in file-name order, so the page never has a broken image.
- * Songs: `src` is a file in public/media/ ("/media/sweat.mp3") or a full URL. A
- * Dropbox share link works once its `dl=0` is changed to `raw=1`.
+ * Songs: `src` is a file in public/media/ ("/media/sweat.mp3") or a full URL.
  * Videos: `youtube` is the id from the YouTube link (youtu.be/<id>).
  */
 
@@ -56,7 +55,7 @@ const SONGS: Song[] = [
   {
     title: "Sweat",
     note: "Her newest single",
-    src: "https://www.dropbox.com/scl/fi/4zxwa82cynnupmcpimq4w/Sweat-Main-Mix-V2-ms-Mastered.mp3?rlkey=h3noimg3p6whjxpban7qmi9o5&raw=1",
+    src: "/media/sweat.mp3",
   },
 ];
 

@@ -40,32 +40,47 @@ const PALETTE = [C.pink, C.red, C.yellow, C.green, C.blue, C.cyan];
 
 const v = (color: string) => ({ "--dot": color } as React.CSSProperties);
 
-/* ---------- media: fill these in ----------
- * Photos: drop files into public/images/jasmine/ with these names. A photo only
- * shows up once its file is there, so the page never has a broken image.
- * Songs and videos: `src` can be a file in public/media/ ("/media/sweat.mp3")
- * or a full URL. A player only shows up once it has a src.
- * Links: add { label, href } pairs; the section hides while the list is empty.
+/* ---------- media ----------
+ * Photos: every image in public/images/jasmine/ (.jpg, .jpeg, .png, .webp) shows up
+ * in the gallery, in file-name order, so the page never has a broken image.
+ * Songs: `src` is a file in public/media/ ("/media/sweat.mp3") or a full URL. A
+ * Dropbox share link works once its `dl=0` is changed to `raw=1`.
+ * Videos: `youtube` is the id from the YouTube link (youtu.be/<id>).
  */
 
-type Photo = { file: string; alt: string };
-const PHOTOS: Photo[] = [
-  { file: "/images/jasmine/jasmine-1.jpg", alt: "Jasmine Yen" },
-  { file: "/images/jasmine/jasmine-2.jpg", alt: "Jasmine Yen" },
-  { file: "/images/jasmine/jasmine-3.jpg", alt: "Jasmine Yen" },
-  { file: "/images/jasmine/jasmine-4.jpg", alt: "Jasmine Yen" },
-];
+const PHOTO_DIR = "images/jasmine";
+const PHOTO_EXT = /\.(jpe?g|png|webp)$/i;
 
 type Song = { title: string; note: string; src: string };
-const SONGS: Song[] = [{ title: "Sweat", note: "Her newest single", src: "" }];
+const SONGS: Song[] = [
+  {
+    title: "Sweat",
+    note: "Her newest single",
+    src: "https://www.dropbox.com/scl/fi/4zxwa82cynnupmcpimq4w/Sweat-Main-Mix-V2-ms-Mastered.mp3?rlkey=h3noimg3p6whjxpban7qmi9o5&raw=1",
+  },
+];
 
-type Video = { title: string; src: string; poster?: string };
-const VIDEOS: Video[] = [{ title: "Sweat (music video)", src: "" }];
+type Video = { title: string; youtube: string };
+const VIDEOS: Video[] = [{ title: "Sweat (music video)", youtube: "X1fpeBn45yY" }];
 
 type Link = { label: string; href: string };
-const LINKS: Link[] = [];
+const LINKS: Link[] = [
+  { label: "Spotify", href: "https://open.spotify.com/artist/4PQ0uJWdQam5rtXciDKVnS" },
+  { label: "Apple Music", href: "https://music.apple.com/us/artist/jasmine-yen/1697792324" },
+  { label: "YouTube", href: "https://www.youtube.com/channel/UCHWF-bilhgUaKFiq1mEirdw" },
+  { label: "TikTok", href: "https://www.tiktok.com/@jasmineyen_" },
+  { label: "Instagram", href: "https://www.instagram.com/jasmineyen/" },
+];
 
-const hasFile = (p: string) => fs.existsSync(path.join(process.cwd(), "public", p));
+function photoFiles(): string[] {
+  const dir = path.join(process.cwd(), "public", PHOTO_DIR);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => PHOTO_EXT.test(f))
+    .sort()
+    .map((f) => `/${PHOTO_DIR}/${f}`);
+}
 
 /* ---------- copy ---------- */
 
@@ -151,9 +166,9 @@ function Head({ kicker, color, title }: { kicker: string; color: string; title: 
 }
 
 export default function MeetJasmineYen() {
-  const photos = PHOTOS.filter((p) => hasFile(p.file));
+  const photos = photoFiles();
   const songs = SONGS.filter((s) => s.src);
-  const videos = VIDEOS.filter((x) => x.src);
+  const videos = VIDEOS.filter((x) => x.youtube);
 
   return (
     <div className="mt-root">
@@ -216,9 +231,9 @@ export default function MeetJasmineYen() {
           <section>
             <Head kicker="Pictures" color={C.cyan} title="This is Jasmine" />
             <div className="mt-photos">
-              {photos.map((p) => (
-                <div key={p.file} className="mt-photo">
-                  <Image src={p.file} alt={p.alt} fill sizes="(max-width: 820px) 50vw, 300px" />
+              {photos.map((src) => (
+                <div key={src} className="mt-photo">
+                  <Image src={src} alt="Jasmine Yen" fill sizes="(max-width: 820px) 50vw, 300px" />
                 </div>
               ))}
             </div>
@@ -265,7 +280,15 @@ export default function MeetJasmineYen() {
           )}
           {videos.map((x) => (
             <figure key={x.title} className="mt-video">
-              <video controls preload="metadata" playsInline src={x.src} poster={x.poster} />
+              <div className="mt-video-frame">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${x.youtube}`}
+                  title={x.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
               <figcaption className="mt-muted">{x.title}</figcaption>
             </figure>
           ))}

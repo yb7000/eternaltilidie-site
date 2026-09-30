@@ -349,8 +349,8 @@ export default function Home() {
           <h2 className="anton">ORIGIN STORY</h2>
           <p>
             Eternal was founded in 2019 by Reggie James and Luca Repola in NYC. Today it is
-            spearheaded by Daouda Leonard and a team of technologists, A&amp;R&apos;s, and artist
-            managers in Los Angeles.
+            spearheaded by Daouda Leonard and a team of technologists, producers, DJs,
+            A&amp;R&apos;s, and artist managers in Los Angeles.
           </p>
         </div>
       </section>

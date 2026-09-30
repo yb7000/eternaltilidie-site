@@ -125,7 +125,7 @@ const CAN_DO = [
   { title: "Singer-songwriter", body: "She sings, and she writes the songs herself." },
   { title: "Multi-instrumentalist", body: "She plays more than one instrument." },
   { title: "Dancer", body: "She moves, too." },
-  { title: "Bilingual", body: "She speaks 6 languages." },
+  { title: "Multilingual", body: "She speaks 6 languages." },
 ];
 
 const LOVES = ["Poetry", "Painting", "Musical theater"];

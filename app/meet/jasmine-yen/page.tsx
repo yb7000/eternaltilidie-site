@@ -199,7 +199,11 @@ export default function MeetJasmineYen() {
               Jasmine is a Chinese R&amp;B Pop singer-songwriter. She won a scholarship
               to Berklee College of Music, and at 19 she was the youngest artist signed to Sony
               China. Now she&apos;s independent, and she&apos;s in an upcoming global fashion
-              campaign with Balenciaga.
+              campaign with Balenciaga. Her new song{" "}
+              <a href="https://youtu.be/X1fpeBn45yY" target="_blank" rel="noopener noreferrer">
+                SWEAT
+              </a>{" "}
+              is out now.
             </p>
             <Dots />
           </div>

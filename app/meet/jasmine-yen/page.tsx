@@ -85,9 +85,12 @@ function photoFiles(): string[] {
 
 const QUICK_FACTS: { big: string; small: string }[] = [
   { big: "7", small: "How old she was when she wrote her first song" },
-  { big: "19", small: "Her age when she signed with a big record label" },
-  { big: "6", small: "Languages" },
-  { big: "2", small: "Instruments she plays" },
+  { big: "19", small: "Her age when she signed with a major record label" },
+  {
+    big: "6",
+    small: "Languages. English, Cantonese, Mandarin, Shanghainese, French, Spanish",
+  },
+  { big: "2", small: "Instruments she plays. Piano and Guitar." },
 ];
 
 const STORY: { when: string; what: string }[] = [

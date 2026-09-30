@@ -177,7 +177,6 @@ export default function MeetJasmineYen() {
         <a href="/" className="brand" aria-label="Eternal">
           <Image src={graffitiLogo} alt="Eternal" style={{ width: 78, height: "auto" }} />
         </a>
-        <span className="mt-header-label">Meet the artist</span>
       </header>
 
       <main className="mt-page">

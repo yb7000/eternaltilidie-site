@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     description: "The singer-songwriter, explained for kids.",
     type: "website",
     url: "https://eternaltilidie.com/meet/jasmine-yen",
-    images: [{ url: "https://eternaltilidie.com/og-jasmine-yen.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-meet-jasmine-yen.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Meet Jasmine Yen",
     description: "The singer-songwriter, explained for kids.",
-    images: ["https://eternaltilidie.com/og-jasmine-yen.jpg"],
+    images: ["https://eternaltilidie.com/og-meet-jasmine-yen.jpg"],
   },
 };
 

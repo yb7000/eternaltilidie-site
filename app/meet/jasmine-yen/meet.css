@@ -27,13 +27,6 @@
   align-items: center;
   line-height: 0;
 }
-.mt-header-label {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
 .mt-page {
   position: relative;
   max-width: 960px;

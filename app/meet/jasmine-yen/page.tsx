@@ -105,7 +105,7 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "2023",
-    what: "At 19, she became the youngest artist ever to sign with RCA Records Greater China, part of Sony Music. That same year she put out her first album, called tbh (short for “to be honest”).",
+    what: "At 19, she became the youngest artist ever to sign with Sony China. That same year she put out her first album, called tbh (short for “to be honest”).",
   },
   {
     when: "Now",
@@ -177,7 +177,6 @@ export default function MeetJasmineYen() {
         <a href="/" className="brand" aria-label="Eternal">
           <Image src={graffitiLogo} alt="Eternal" style={{ width: 78, height: "auto" }} />
         </a>
-        <span className="mt-header-label">Meet the artist</span>
       </header>
 
       <main className="mt-page">

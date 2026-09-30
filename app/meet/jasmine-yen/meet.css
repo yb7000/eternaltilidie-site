@@ -123,6 +123,13 @@
   font-size: 22px;
   line-height: 1.45;
 }
+.mt-lede-link {
+  color: #f97fc0;
+  font-weight: 700;
+}
+.mt-lede-link:hover {
+  color: #f5c518;
+}
 .mt-hero-art img {
   display: block;
   width: 100%;

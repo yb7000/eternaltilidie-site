@@ -53,14 +53,14 @@ const PHOTO_EXT = /\.(jpe?g|png|webp)$/i;
 type Song = { title: string; note: string; src: string };
 const SONGS: Song[] = [
   {
-    title: "Sweat",
+    title: "Listen to SWEAT",
     note: "Her newest single",
     src: "/media/sweat.mp3",
   },
 ];
 
 type Video = { title: string; youtube: string };
-const VIDEOS: Video[] = [{ title: "Sweat (music video)", youtube: "X1fpeBn45yY" }];
+const VIDEOS: Video[] = [{ title: "WATCH SWEAT", youtube: "X1fpeBn45yY" }];
 
 type Link = { label: string; href: string };
 const LINKS: Link[] = [
@@ -85,9 +85,9 @@ function photoFiles(): string[] {
 
 const QUICK_FACTS: { big: string; small: string }[] = [
   { big: "7", small: "How old she was when she wrote her first song" },
-  { big: "70+", small: "Songs she has written so far" },
   { big: "19", small: "Her age when she signed with a big record label" },
-  { big: "2", small: "Languages she sings and speaks" },
+  { big: "6", small: "Languages" },
+  { big: "2", small: "Instruments she plays" },
 ];
 
 const STORY: { when: string; what: string }[] = [
@@ -101,7 +101,7 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "2022",
-    what: "She won a scholarship to Berklee College of Music in Boston, one of the most famous music schools in the world. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
+    what: "She won a scholarship to Berklee College of Music in Boston, one of the most prestigious music schools in the world. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
   },
   {
     when: "2023",
@@ -113,11 +113,11 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "October 2026",
-    what: "She stars in a campaign for Balenciaga, a famous fashion brand.",
+    what: "She is starring in a campaign for Balenciaga, a luxury fashion brand.",
   },
   {
-    when: "2027",
-    what: "A new EP (a mini album), then her second album. She will also act in her first big movie.",
+    when: "Spring 2027",
+    what: "A new EP (a mini album), then her second album. She will also act in her first major global studio film.",
   },
 ];
 
@@ -125,7 +125,7 @@ const CAN_DO = [
   { title: "Singer-songwriter", body: "She sings, and she writes the songs herself." },
   { title: "Multi-instrumentalist", body: "She plays more than one instrument." },
   { title: "Dancer", body: "She moves, too." },
-  { title: "Bilingual", body: "She speaks two languages." },
+  { title: "Multilingual", body: "She speaks 6 languages." },
 ];
 
 const LOVES = ["Poetry", "Painting", "Musical theater"];
@@ -197,8 +197,10 @@ export default function MeetJasmineYen() {
               <span style={{ color: C.pink }}>Jasmine</span> Yen
             </h1>
             <p className="mt-lede">
-              Jasmine is a pop star who writes her own songs. She started when she was 7, and
-              now she makes albums, music videos and fashion campaigns.
+              Jasmine is a Chinese singer-songwriter wunderkind. She won a scholarship to Berklee
+              College of Music, and at 19 she was the youngest artist signed to Sony China. Now
+              she&apos;s independent, and she&apos;s in an upcoming global fashion campaign with
+              Balenciaga.
             </p>
             <Dots />
           </div>
@@ -255,15 +257,6 @@ export default function MeetJasmineYen() {
         {/* listen */}
         <section>
           <Head kicker="Press play" color={C.green} title="Listen & watch" />
-          <div className="mt-listen">
-            <div className="mt-cover">
-              <Image src={sweatCover} alt="Sweat cover art" sizes="160px" />
-            </div>
-            <div className="mt-listen-copy">
-              <p className="anton mt-song-title">Sweat</p>
-              <p className="mt-muted">Her newest single, with a music video to go with it.</p>
-            </div>
-          </div>
           {songs.length > 0 && (
             <ul className="mt-tracks">
               {songs.map((s, i) => (
@@ -279,6 +272,7 @@ export default function MeetJasmineYen() {
           )}
           {videos.map((x) => (
             <figure key={x.title} className="mt-video">
+              <figcaption className="anton mt-video-title">{x.title}</figcaption>
               <div className="mt-video-frame">
                 <iframe
                   src={`https://www.youtube-nocookie.com/embed/${x.youtube}`}
@@ -288,7 +282,6 @@ export default function MeetJasmineYen() {
                   loading="lazy"
                 />
               </div>
-              <figcaption className="mt-muted">{x.title}</figcaption>
             </figure>
           ))}
         </section>
@@ -319,7 +312,7 @@ export default function MeetJasmineYen() {
           <Head kicker="Fashion" color={C.red} title="Big brands call her" />
           <p className="mt-body">
             Famous fashion brands ask Jasmine to wear their clothes and star in their photos and
-            videos. That&apos;s called a brand partnership. She has worked with:
+            videos. She has worked with:
           </p>
           <div className="mt-brands">
             {BRANDS.map((b) => (

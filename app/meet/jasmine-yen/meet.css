@@ -126,6 +126,7 @@
 .mt-lede-link {
   color: #f97fc0;
   font-weight: 700;
+  text-decoration: none;
 }
 .mt-lede-link:hover {
   color: #f5c518;

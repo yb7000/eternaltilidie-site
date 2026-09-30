@@ -3,6 +3,7 @@ import Deck from "@/components/Deck";
 import Logo3D from "@/components/Logo3D";
 
 import graffitiLogo from "@/public/images/graffiti-logo.png";
+import iconLogoWhite from "@/public/images/icon-logo-white.png";
 import doodleStar from "@/public/images/doodle-star.png";
 import doodleHeart from "@/public/images/doodle-heart.png";
 import mascot from "@/public/images/mascot.png";
@@ -30,13 +31,13 @@ function Dots({ small = false }: { small?: boolean }) {
 
 export default function Home() {
   return (
-    <Deck>
+    <Deck siteLink={false}>
       <section className="slide slide--center" style={{ gap: 36 }}>
         <Image
-          src={graffitiLogo}
-          alt="Eternal graffiti logo"
+          src={iconLogoWhite}
+          alt="Eternal icon logo"
           priority
-          style={{ width: "clamp(280px,42vw,520px)", height: "auto" }}
+          style={{ width: "clamp(200px,26vw,340px)", height: "auto" }}
         />
         <p className="hero-lede">
           <em>Eternal</em> is an audiovisual technology label. A home for artists developing the

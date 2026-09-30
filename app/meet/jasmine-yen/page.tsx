@@ -105,7 +105,7 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "2023",
-    what: "At 19, she became the youngest artist ever to sign with RCA Records Greater China, part of Sony Music. That same year she put out her first album, called tbh (short for “to be honest”).",
+    what: "At 19, she became the youngest artist ever to sign with Sony China. That same year she put out her first album, called tbh (short for “to be honest”).",
   },
   {
     when: "Now",

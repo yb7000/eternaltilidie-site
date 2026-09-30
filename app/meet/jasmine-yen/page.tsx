@@ -11,20 +11,20 @@ import sweatCover from "@/public/images/jasmine-yen-sweat.jpeg";
 
 export const metadata: Metadata = {
   title: "Meet Jasmine Yen",
-  description: "Who is Jasmine Yen? The singer-songwriter, explained for kids.",
+  description: "R&B Pop Singer-songwriter",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Meet Jasmine Yen",
-    description: "The singer-songwriter, explained for kids.",
+    description: "R&B Pop Singer-songwriter",
     type: "website",
     url: "https://eternaltilidie.com/meet/jasmine-yen",
-    images: [{ url: "https://eternaltilidie.com/og-meet-jasmine-yen.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://eternaltilidie.com/og-meet-jasmine-yen-2.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Meet Jasmine Yen",
-    description: "The singer-songwriter, explained for kids.",
-    images: ["https://eternaltilidie.com/og-meet-jasmine-yen.jpg"],
+    description: "R&B Pop Singer-songwriter",
+    images: ["https://eternaltilidie.com/og-meet-jasmine-yen-2.jpg"],
   },
 };
 

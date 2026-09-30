@@ -157,7 +157,7 @@ export default function Home() {
         <h2 className="anton listen-title">
           LISTEN TO
           <br />
-          THE KIDS
+          THE KIDS.. THEY SAY..
         </h2>
       </section>
 

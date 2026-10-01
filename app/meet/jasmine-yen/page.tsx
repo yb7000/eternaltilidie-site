@@ -104,7 +104,7 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "2022",
-    what: "She won a scholarship to Berklee College of Music in Boston, one of the most prestigious music schools in the world. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
+    what: "She earned a prestigious scholarship to the world-renowned Berklee College of Music in Boston. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
   },
   {
     when: "2023",

@@ -104,7 +104,7 @@ const STORY: { when: string; what: string }[] = [
   },
   {
     when: "2022",
-    what: "She won a scholarship to Berklee College of Music in Boston, one of the most prestigious music schools in the world. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
+    what: "She earned a prestigious scholarship to the world-renowned Berklee College of Music in Boston. A scholarship means the school picked her because she was so good, and helped pay for her to go.",
   },
   {
     when: "2023",
@@ -199,10 +199,10 @@ export default function MeetJasmineYen() {
               <span style={{ color: C.pink }}>Jasmine</span> Yen
             </h1>
             <p className="mt-lede">
-              Jasmine is a Chinese R&amp;B Pop singer-songwriter. She won a scholarship
-              to Berklee College of Music, and at 19 she was the youngest artist signed to Sony
-              China. Now she&apos;s independent, and she&apos;s in an upcoming global fashion
-              campaign with Balenciaga. Her new song{" "}
+              Jasmine is a Chinese R&amp;B Pop singer-songwriter. She earned a prestigious
+              scholarship to the world-renowned Berklee College of Music, and at 19 she was the
+              youngest artist signed to Sony China. Now she&apos;s independent, and she&apos;s in
+              an upcoming global fashion campaign with Balenciaga. Her new song{" "}
               <a
                 className="mt-lede-link"
                 href="https://youtu.be/X1fpeBn45yY"

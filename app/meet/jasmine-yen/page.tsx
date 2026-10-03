@@ -54,7 +54,7 @@ type Song = { title: string; note: string; src: string };
 const SONGS: Song[] = [
   {
     title: "Listen to SWEAT",
-    note: "Her newest single",
+    note: "Her newest single is an homage to Lady Gaga and her childhood love of pop & R&B divas.",
     src: "/media/sweat.mp3",
   },
 ];

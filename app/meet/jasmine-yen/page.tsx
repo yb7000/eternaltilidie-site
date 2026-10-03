@@ -53,7 +53,7 @@ const PHOTO_EXT = /\.(jpe?g|png|webp)$/i;
 type Song = { title: string; note: string; src: string };
 const SONGS: Song[] = [
   {
-    title: "Listen to SWEAT",
+    title: "SWEAT",
     note: "Her newest single is an homage to Lady Gaga and her childhood love of pop & R&B divas.",
     src: "/media/sweat.mp3",
   },
@@ -227,16 +227,15 @@ export default function MeetJasmineYen() {
 
         {/* listen */}
         <section>
-          <Head kicker="Press play" color={C.green} title="Listen & watch" />
+          <Head kicker="Press play" color={C.green} title="Listen to SWEAT" />
           {songs.length > 0 && (
             <ul className="mt-tracks">
               {songs.map((s, i) => (
                 <li key={s.title} style={v(PALETTE[i % PALETTE.length])}>
                   <div className="mt-track-meta">
-                    <span className="mt-track-title">{s.title}</span>
                     <span className="mt-muted">{s.note}</span>
                   </div>
-                  <audio controls preload="none" src={s.src} />
+                  <audio controls preload="none" src={s.src} aria-label={s.title} />
                 </li>
               ))}
             </ul>

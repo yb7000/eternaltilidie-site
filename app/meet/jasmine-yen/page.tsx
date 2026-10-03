@@ -225,6 +225,38 @@ export default function MeetJasmineYen() {
           </div>
         </section>
 
+        {/* listen */}
+        <section>
+          <Head kicker="Press play" color={C.green} title="Listen & watch" />
+          {songs.length > 0 && (
+            <ul className="mt-tracks">
+              {songs.map((s, i) => (
+                <li key={s.title} style={v(PALETTE[i % PALETTE.length])}>
+                  <div className="mt-track-meta">
+                    <span className="mt-track-title">{s.title}</span>
+                    <span className="mt-muted">{s.note}</span>
+                  </div>
+                  <audio controls preload="none" src={s.src} />
+                </li>
+              ))}
+            </ul>
+          )}
+          {videos.map((x) => (
+            <figure key={x.title} className="mt-video">
+              <figcaption className="anton mt-video-title">{x.title}</figcaption>
+              <div className="mt-video-frame">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${x.youtube}`}
+                  title={x.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </figure>
+          ))}
+        </section>
+
         {/* quick facts */}
         <section>
           <Head kicker="Jasmine in 10 seconds" color={C.yellow} title="The quick facts" />
@@ -263,38 +295,6 @@ export default function MeetJasmineYen() {
               </li>
             ))}
           </ol>
-        </section>
-
-        {/* listen */}
-        <section>
-          <Head kicker="Press play" color={C.green} title="Listen & watch" />
-          {songs.length > 0 && (
-            <ul className="mt-tracks">
-              {songs.map((s, i) => (
-                <li key={s.title} style={v(PALETTE[i % PALETTE.length])}>
-                  <div className="mt-track-meta">
-                    <span className="mt-track-title">{s.title}</span>
-                    <span className="mt-muted">{s.note}</span>
-                  </div>
-                  <audio controls preload="none" src={s.src} />
-                </li>
-              ))}
-            </ul>
-          )}
-          {videos.map((x) => (
-            <figure key={x.title} className="mt-video">
-              <figcaption className="anton mt-video-title">{x.title}</figcaption>
-              <div className="mt-video-frame">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${x.youtube}`}
-                  title={x.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          ))}
         </section>
 
         {/* skills + loves */}

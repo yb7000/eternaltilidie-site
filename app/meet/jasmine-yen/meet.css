@@ -245,10 +245,6 @@
   flex-direction: column;
   gap: 2px;
 }
-.mt-track-title {
-  font-size: 20px;
-  font-weight: 700;
-}
 .mt-tracks audio {
   width: min(100%, 360px);
 }

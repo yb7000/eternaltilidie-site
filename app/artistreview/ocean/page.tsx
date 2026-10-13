@@ -63,9 +63,9 @@ const LISTENERS = [
   { mon: "Apr", val: "43.1K", h: 29 },
   { mon: "May", val: "67.0K", h: 45 },
   { mon: "Jun", val: "99.0K", h: 66 },
-  { mon: "Jul", val: "110K", h: 73 },
-  { mon: "Aug", val: "108K", h: 72 },
-  { mon: "Sep", val: "127K", h: 85 },
+  { mon: "Jul", val: "110K", h: 74 },
+  { mon: "Aug", val: "108K", h: 68 },
+  { mon: "Sep", val: "127K", h: 84 },
   { mon: "Oct", val: "150K", h: 100 },
 ];
 

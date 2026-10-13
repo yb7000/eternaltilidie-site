@@ -253,7 +253,7 @@ export default function OceanArtistReview() {
           <Kicker color={C.yellow}>By the numbers</Kicker>
           <h2 className="anton ar-title ar-title--sm">Audience</h2>
           <ul className="ar-stats">
-            <Stat num="519K" label="YouTube subscribers" color={C.red} />
+            <Stat num="520K" label="YouTube subscribers" color={C.red} />
             <Stat num="181K" label="TikTok followers" color={C.cyan} />
             <Stat num="150K" label="Spotify monthly listeners" delta="9× since March" color={C.green} />
             <Stat num="63K" label="Instagram followers" color={C.pink} />
@@ -301,7 +301,7 @@ export default function OceanArtistReview() {
             colorize
             items={[
               <>
-                The creator audience has not converted into a music audience yet. 519K YouTube
+                The creator audience has not converted into a music audience yet. 520K YouTube
                 subscribers next to 5.5K Spotify followers is the gap, and the opportunity.
               </>,
               <>

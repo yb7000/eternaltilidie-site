@@ -259,7 +259,7 @@ export default function OceanArtistReview() {
             <Stat num="63K" label="Instagram followers" color={C.pink} />
             <Stat num="20K" label="Owned fans" color={C.yellow} />
             <Stat num="11.5K" label="SoundCloud followers" color={C.blue} />
-            <Stat num="5.2K" label="Spotify followers" delta="+66% since March" color={C.green} />
+            <Stat num="5.5K" label="Spotify followers" delta="+76% since March" color={C.green} />
           </ul>
           <p className="ar-note">
             Platform figures via Viberate, September 6, 2026; monthly listeners updated October 2026. Owned-fan count from the artist.
@@ -302,7 +302,7 @@ export default function OceanArtistReview() {
             items={[
               <>
                 The creator audience has not converted into a music audience yet. 519K YouTube
-                subscribers next to 5.2K Spotify followers is the gap, and the opportunity.
+                subscribers next to 5.5K Spotify followers is the gap, and the opportunity.
               </>,
               <>
                 No booking agent and no work visa means no shows. Getting shows is the game, and

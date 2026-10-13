@@ -221,9 +221,10 @@
   display: flex;
   align-items: flex-end;
   gap: clamp(8px, 1.4vw, 18px);
-  height: clamp(120px, 18vw, 220px);
+  height: clamp(150px, 20vw, 250px);
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 30px 0 0;
   list-style: none;
 }
 .ar-growth li {
@@ -236,10 +237,29 @@
   height: 100%;
   min-width: 0;
 }
+.ar-growth .track {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+}
 .ar-growth .bar {
+  position: relative;
   width: 100%;
   background: var(--dot, #2ec4e6);
   height: var(--h, 10%);
+}
+.ar-growth .val {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+.ar-growth .mon {
+  flex: none;
 }
 .ar-growth .val {
   font-family: var(--font-anton), sans-serif;

@@ -275,8 +275,11 @@ export default function OceanArtistReview() {
           <ul className="ar-growth" style={{ "--dot": C.cyan } as React.CSSProperties}>
             {LISTENERS.map((d, i) => (
               <li key={d.mon} style={{ "--dot": PALETTE[(i + 5) % PALETTE.length] } as React.CSSProperties}>
-                <span className="val">{d.val}</span>
-                <span className="bar" style={{ "--h": `${d.h}%` } as React.CSSProperties} />
+                <span className="track">
+                  <span className="bar" style={{ "--h": `${d.h}%` } as React.CSSProperties}>
+                    <span className="val">{d.val}</span>
+                  </span>
+                </span>
                 <span className="mon">{d.mon}</span>
               </li>
             ))}

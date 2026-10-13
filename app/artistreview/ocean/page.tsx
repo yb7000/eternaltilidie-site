@@ -59,13 +59,14 @@ const LINKS = {
 
 // Spotify monthly listeners, first week of each month (Viberate, pulled Sept 6 2026).
 const LISTENERS = [
-  { mon: "Mar", val: "16.7K", h: 13 },
-  { mon: "Apr", val: "43.1K", h: 34 },
-  { mon: "May", val: "67.0K", h: 53 },
-  { mon: "Jun", val: "99.0K", h: 78 },
-  { mon: "Jul", val: "110K", h: 87 },
-  { mon: "Aug", val: "108K", h: 85 },
-  { mon: "Sep", val: "127K", h: 100 },
+  { mon: "Mar", val: "16.7K", h: 11 },
+  { mon: "Apr", val: "43.1K", h: 29 },
+  { mon: "May", val: "67.0K", h: 45 },
+  { mon: "Jun", val: "99.0K", h: 66 },
+  { mon: "Jul", val: "110K", h: 73 },
+  { mon: "Aug", val: "108K", h: 72 },
+  { mon: "Sep", val: "127K", h: 85 },
+  { mon: "Oct", val: "150K", h: 100 },
 ];
 
 function Dots({ small = false }: { small?: boolean }) {
@@ -254,14 +255,14 @@ export default function OceanArtistReview() {
           <ul className="ar-stats">
             <Stat num="519K" label="YouTube subscribers" color={C.red} />
             <Stat num="181K" label="TikTok followers" color={C.cyan} />
-            <Stat num="127K" label="Spotify monthly listeners" delta="7.6× since March" color={C.green} />
+            <Stat num="150K" label="Spotify monthly listeners" delta="9× since March" color={C.green} />
             <Stat num="63K" label="Instagram followers" color={C.pink} />
             <Stat num="20K" label="Owned fans" color={C.yellow} />
             <Stat num="11.5K" label="SoundCloud followers" color={C.blue} />
             <Stat num="5.2K" label="Spotify followers" delta="+66% since March" color={C.green} />
           </ul>
           <p className="ar-note">
-            Platform figures via Viberate, September 6, 2026. Owned-fan count from the artist.
+            Platform figures via Viberate, September 6, 2026; monthly listeners updated October 2026. Owned-fan count from the artist.
           </p>
         </div>
       </section>
@@ -281,7 +282,7 @@ export default function OceanArtistReview() {
             ))}
           </ul>
           <p className="ar-body">
-            From 16.7K to 127K monthly listeners in six months, and 5,000 Spotify followers reached
+            From 16.7K to 150K monthly listeners in seven months, and 5,000 Spotify followers reached
             in August. The audience is arriving. The job now is turning listeners into fans and
             fans into a business.
           </p>

@@ -128,9 +128,14 @@ export default function Deck({
       </div>
 
       <header className="deck-header">
-        <div className="brand">
+        <button
+          className="brand"
+          aria-label="Back to first slide"
+          onClick={() => goTo(0)}
+          style={{ background: "none", border: 0, padding: 0, cursor: "pointer" }}
+        >
           <Image src={graffitiLogo} alt="Eternal" style={{ width: 78, height: "auto" }} />
-        </div>
+        </button>
         {innerLabel && idx > 0 && idx < count - 1 ? (
           <span className="site-link header-label">{innerLabel}</span>
         ) : siteLink ? (

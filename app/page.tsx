@@ -4,6 +4,7 @@ import Logo3D from "@/components/Logo3D";
 
 import graffitiLogo from "@/public/images/graffiti-logo.png";
 import iconLogoWhite from "@/public/images/icon-logo-white.png";
+import collabSculptures from "@/public/images/collab-sculptures.jpg";
 import doodleStar from "@/public/images/doodle-star.png";
 import doodleHeart from "@/public/images/doodle-heart.png";
 import mascot from "@/public/images/mascot.png";
@@ -46,8 +47,22 @@ export default function Home() {
         <Dots />
       </section>
 
-      <section className="slide slide--center" style={{ gap: 36 }}>
-        <p className="hero-lede">
+      <section className="slide slide--cover">
+        <Image
+          src={collabSculptures}
+          alt="Lauren Halsey sculptures at an Eternal event"
+          fill
+          sizes="100vw"
+          className="bg-img"
+          style={{ opacity: 0.45, objectPosition: "center 25%" }}
+        />
+        <div
+          className="overlay"
+          style={{
+            background: "radial-gradient(ellipse at center,rgba(0,0,0,.6),rgba(0,0,0,.85))",
+          }}
+        />
+        <p className="hero-lede" style={{ position: "relative", zIndex: 1 }}>
           We collaborate with artists like{" "}
           <a
             className="underlined"

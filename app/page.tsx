@@ -48,8 +48,52 @@ export default function Home() {
 
       <section className="slide slide--center" style={{ gap: 36 }}>
         <p className="hero-lede">
-          We collaborate with artists like Kennyflowers, Ocean, Jasmine Yen, Salaam Remi and
-          Lauren Halsey.
+          We collaborate with artists like{" "}
+          <a
+            className="underlined"
+            href="https://www.instagram.com/reel/DZQUWS5zT6k/?cplk=MWlqNmR0eXJlNzBucA=="
+            target="_blank"
+            rel="noopener"
+          >
+            Kennyflowers
+          </a>
+          ,{" "}
+          <a
+            className="underlined"
+            href="https://youtube.com/@prodbyocean?si=V9K3h8vI99AZJndD"
+            target="_blank"
+            rel="noopener"
+          >
+            Ocean
+          </a>
+          ,{" "}
+          <a
+            className="underlined"
+            href="https://youtu.be/X1fpeBn45yY?si=kAl4LrIiDnwOvnJT"
+            target="_blank"
+            rel="noopener"
+          >
+            Jasmine Yen
+          </a>
+          ,{" "}
+          <a
+            className="underlined"
+            href="https://music.apple.com/us/curator/musezeum/1735561545"
+            target="_blank"
+            rel="noopener"
+          >
+            Salaam Remi
+          </a>
+          , and{" "}
+          <a
+            className="underlined"
+            href="https://www.instagram.com/reel/DdkEYJgSn3_/?srtk=NGttejgyYjFpcWU0"
+            target="_blank"
+            rel="noopener"
+          >
+            Lauren Halsey
+          </a>
+          .
         </p>
       </section>
 

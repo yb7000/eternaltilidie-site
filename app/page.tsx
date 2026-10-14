@@ -34,7 +34,17 @@ export default function Home() {
   return (
     <Deck siteLink={false}>
       <section className="slide slide--center" style={{ gap: 36 }}>
-        <Logo3D src="/models/eternal-logo-3d.obj" className="logo-3d-hero" />
+        <link
+          rel="preload"
+          href="/models/eternal-logo-3d.bin"
+          as="fetch"
+          crossOrigin="anonymous"
+        />
+        <Logo3D
+          src="/models/eternal-logo-3d.bin"
+          className="logo-3d-hero"
+          poster="/images/icon-logo-white.png"
+        />
         <p className="hero-lede">
           <em>Eternal</em> is an audiovisual development platform. A home for artists developing the
           next generation of storytelling.

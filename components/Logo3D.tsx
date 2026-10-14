@@ -1,48 +1,56 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-function parseObj(text: string): THREE.BufferGeometry {
-  const vs: number[] = [];
-  const ns: number[] = [];
-  const pos: number[] = [];
-  const nor: number[] = [];
-  for (const line of text.split("\n")) {
-    if (line[0] === "v" && line[1] === " ") {
-      const p = line.trim().split(/\s+/);
-      vs.push(+p[1], +p[2], +p[3]);
-    } else if (line.startsWith("vn ")) {
-      const p = line.trim().split(/\s+/);
-      ns.push(+p[1], +p[2], +p[3]);
-    } else if (line.startsWith("f ")) {
-      const p = line.trim().split(/\s+/).slice(1);
-      for (let i = 1; i < p.length - 1; i++) {
-        for (const tok of [p[0], p[i], p[i + 1]]) {
-          const parts = tok.split("/");
-          const vi = (parseInt(parts[0]) - 1) * 3;
-          pos.push(vs[vi], vs[vi + 1], vs[vi + 2]);
-          if (parts[2]) {
-            const ni = (parseInt(parts[2]) - 1) * 3;
-            nor.push(ns[ni], ns[ni + 1], ns[ni + 2]);
-          }
-        }
-      }
-    }
+// Compact binary logo geometry (see scripts/pack-logo.py):
+// "ELG1", uint32 vertCount, uint32 indexCount,
+// float32 posMin[3] + posScale[3],
+// uint16 quantized positions [V*3], int8 normals [V*3],
+// zero-padding to 4 bytes, then uint16 (V<=65535) or uint32 indices.
+function parseBin(buf: ArrayBuffer): THREE.BufferGeometry {
+  const dv = new DataView(buf);
+  if (dv.getUint32(0, false) !== 0x454c4731) throw new Error("bad logo binary");
+  const V = dv.getUint32(4, true);
+  const I = dv.getUint32(8, true);
+  const min = [dv.getFloat32(12, true), dv.getFloat32(16, true), dv.getFloat32(20, true)];
+  const scale = [dv.getFloat32(24, true), dv.getFloat32(28, true), dv.getFloat32(32, true)];
+  let off = 36;
+  const qpos = new Uint16Array(buf, off, V * 3);
+  off += V * 6;
+  const qnor = new Int8Array(buf, off, V * 3);
+  off += V * 3;
+  off = (off + 3) & ~3;
+  const index =
+    V <= 65535 ? new Uint16Array(buf, off, I) : new Uint32Array(buf, off, I);
+
+  const pos = new Float32Array(V * 3);
+  const nor = new Float32Array(V * 3);
+  for (let i = 0; i < V * 3; i++) {
+    const k = i % 3;
+    pos[i] = min[k] + (qpos[i] / 65535) * scale[k];
+    nor[i] = qnor[i] / 127;
   }
   const geo = new THREE.BufferGeometry();
-  geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-  if (nor.length === pos.length && nor.length > 0) {
-    geo.setAttribute("normal", new THREE.Float32BufferAttribute(nor, 3));
-  } else {
-    geo.computeVertexNormals();
-  }
+  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
+  geo.setIndex(new THREE.BufferAttribute(index.slice(), 1));
   return geo;
 }
 
-// Draggable, slowly spinning 3D render of the Eternal logo.
-export default function Logo3D({ src, className }: { src: string; className?: string }) {
+// Draggable, slowly spinning 3D render of the Eternal logo. `poster` is an
+// image shown immediately and faded out once the model is rendering.
+export default function Logo3D({
+  src,
+  className,
+  poster,
+}: {
+  src: string;
+  className?: string;
+  poster?: string;
+}) {
   const hostRef = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
@@ -65,10 +73,10 @@ export default function Logo3D({ src, className }: { src: string; className?: st
 
     let disposed = false;
     fetch(src)
-      .then((r) => r.text())
-      .then((txt) => {
+      .then((r) => r.arrayBuffer())
+      .then((buf) => {
         if (disposed) return;
-        const geo = parseObj(txt);
+        const geo = parseBin(buf);
         geo.computeBoundingBox();
         const box = geo.boundingBox!;
         const c = new THREE.Vector3();
@@ -85,6 +93,7 @@ export default function Logo3D({ src, className }: { src: string; className?: st
         inner.add(mesh);
         inner.scale.setScalar(s);
         group.add(inner);
+        setReady(true);
       })
       .catch((e) => console.warn("logo-3d load failed", e));
 
@@ -142,5 +151,27 @@ export default function Logo3D({ src, className }: { src: string; className?: st
     };
   }, [src]);
 
-  return <div ref={hostRef} className={className} />;
+  return (
+    <div ref={hostRef} className={className} style={{ position: "relative" }}>
+      {poster ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={poster}
+          alt=""
+          aria-hidden
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            height: "76%",
+            width: "auto",
+            transform: "translate(-50%,-50%)",
+            opacity: ready ? 0 : 1,
+            transition: "opacity .5s ease",
+            pointerEvents: "none",
+          }}
+        />
+      ) : null}
+    </div>
+  );
 }

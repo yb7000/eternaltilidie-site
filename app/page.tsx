@@ -36,7 +36,7 @@ export default function Home() {
       <section className="slide slide--center" style={{ gap: 36 }}>
         <Logo3D src="/models/eternal-logo-3d.obj" className="logo-3d-hero" />
         <p className="hero-lede">
-          <em>Eternal</em> is an audiovisual technology label. A home for artists developing the
+          <em>Eternal</em> is an audiovisual development platform. A home for artists developing the
           next generation of storytelling.
         </p>
         <Dots />
@@ -163,7 +163,7 @@ export default function Home() {
           >
             StudioOS
           </a>{" "}
-          portal is how you can connect, engage and collaborate with the Eternal team.
+          portal is how artists and their teams connect, engage and collaborate with Eternal.
         </p>
         <p className="studio-sub">
           It is a new platform for developing unique URL and IRL experiences for art to be seen

@@ -339,11 +339,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide--center" style={{ gap: 36 }}>
+      <section
+        className="slide slide--center"
+        style={{ gap: 24, padding: "clamp(40px,8vh,72px) 24px" }}
+      >
         <Image
           src={photoBoothGrid}
           alt="Photo-booth grid from Eternal festivals"
-          style={{ width: "min(620px,90vw)", height: "auto" }}
+          style={{ width: "min(620px,90vw,56vh)", height: "auto" }}
         />
         <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
           <p className="powered-kicker">Our first experience was:</p>

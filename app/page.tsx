@@ -54,7 +54,7 @@ export default function Home() {
           fill
           sizes="100vw"
           className="bg-img"
-          style={{ opacity: 0.45, objectPosition: "center 25%" }}
+          style={{ opacity: 0.45, objectPosition: "center top" }}
         />
         <div
           className="overlay"

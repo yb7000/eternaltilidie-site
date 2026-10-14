@@ -46,6 +46,13 @@ export default function Home() {
         <Dots />
       </section>
 
+      <section className="slide slide--center" style={{ gap: 36 }}>
+        <p className="hero-lede">
+          We collaborate with artists like Kennyflowers, Ocean, Jasmine Yen, Salaam Remi and
+          Lauren Halsey.
+        </p>
+      </section>
+
       <section className="slide slide--center" style={{ gap: 32, position: "relative" }}>
         <Image
           src={doodleStar}

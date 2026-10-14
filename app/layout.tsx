@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eternaltilidie.com"),
   title: "ETERNAL",
   description:
-    "Eternal is an artist development platform. A home for developing the next generation of audiovisual storytelling.",
+    "Eternal is an international artist development platform based in Los Angeles (USA) – specialized in audio and video production, publishing and distribution.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],

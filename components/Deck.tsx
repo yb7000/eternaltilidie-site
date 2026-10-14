@@ -114,7 +114,7 @@ export default function Deck({
   }, [go, goTo]);
 
   const pageLabel =
-    String(idx + 1).padStart(2, "0") + " / " + String(count).padStart(2, "0");
+    String(idx).padStart(2, "0") + " / " + String(count - 1).padStart(2, "0");
 
   return (
     <div className="deck-root">

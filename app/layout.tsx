@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eternaltilidie.com"),
   title: "ETERNAL",
   description:
-    "Eternal is an audiovisual development platform. A home for artists developing the next generation of storytelling.",
+    "Eternal is an artist development platform. A home for developing the next generation of audiovisual storytelling.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ETERNAL",
     description:
-      "An audiovisual development platform. A home for artists developing the next generation of storytelling.",
+      "An artist development platform. A home for developing the next generation of audiovisual storytelling.",
     type: "website",
     url: "https://eternaltilidie.com",
     images: [{ url: "https://eternaltilidie.com/og.png", width: 1200, height: 630 }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ETERNAL",
     description:
-      "An audiovisual development platform. A home for artists developing the next generation of storytelling.",
+      "An artist development platform. A home for developing the next generation of audiovisual storytelling.",
     images: ["https://eternaltilidie.com/og.png"],
   },
 };

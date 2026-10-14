@@ -34,12 +34,7 @@ export default function Home() {
   return (
     <Deck siteLink={false}>
       <section className="slide slide--center" style={{ gap: 36 }}>
-        <Image
-          src={iconLogoWhite}
-          alt="Eternal icon logo"
-          priority
-          style={{ width: "clamp(200px,26vw,340px)", height: "auto" }}
-        />
+        <Logo3D src="/models/eternal-logo-3d.obj" className="logo-3d-hero" />
         <p className="hero-lede">
           <em>Eternal</em> is an audiovisual technology label. A home for artists developing the
           next generation of storytelling.
@@ -411,7 +406,11 @@ export default function Home() {
           padding: "96px 32px",
         }}
       >
-        <Logo3D src="/models/eternal-logo-3d.obj" className="logo-3d" />
+        <Image
+          src={iconLogoWhite}
+          alt="Eternal icon logo"
+          style={{ width: "clamp(200px,24vw,320px)", height: "auto" }}
+        />
         <div className="founder-copy">
           <h2 className="anton">ORIGIN STORY</h2>
           <p>

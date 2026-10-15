@@ -68,7 +68,7 @@ export default function Home() {
           }}
         />
         <p className="hero-lede" style={{ position: "relative", zIndex: 1 }}>
-          We collaborate with artists like{" "}
+          Emerging voices and established icons, across music and visual art. We work with{" "}
           <a
             className="underlined"
             href="https://www.instagram.com/reel/DZQUWS5zT6k/?cplk=MWlqNmR0eXJlNzBucA=="
@@ -112,8 +112,8 @@ export default function Home() {
             rel="noopener"
           >
             Lauren Halsey
-          </a>
-          .
+          </a>{" "}
+          to produce, publish, and distribute work with no limits and no boundaries.
         </p>
       </section>
 

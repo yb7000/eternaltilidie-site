@@ -164,7 +164,6 @@ export default function Home() {
           style={{ width: "clamp(130px,16vw,190px)", height: "auto" }}
         />
         <p className="studio-lede">
-          Our{" "}
           <a
             className="underlined"
             href="https://eternal.createos.app"
@@ -173,11 +172,11 @@ export default function Home() {
           >
             StudioOS
           </a>{" "}
-          portal is how artists and their teams connect, engage and collaborate with Eternal.
+          is where artists and their teams plug into Eternal: one portal to connect, engage, and
+          collaborate.
         </p>
         <p className="studio-sub">
-          It is a new platform for developing unique URL and IRL experiences for art to be seen
-          and heard.
+          It&rsquo;s how we build URL and IRL experiences for art to be seen and heard.
         </p>
         <p className="studio-note">Eternal was born in NYC and based in LA.</p>
       </section>
